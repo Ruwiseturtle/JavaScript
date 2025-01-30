@@ -108,11 +108,14 @@ const reverseSeq = (n: number): number[] => {
 function squareSum(numbers: number[]): number{
   return  numbers.reduce((acum, item) => acum + item**2, 0)
 }
-
 // console.log(squareSum([1, 2]));
-console.log('====================================');
-console.log();
-console.log('====================================');
 
 //  ***************************************************************************
 //9
+function smash(words: string[]): string{
+  let str = words.reduce((acum, item) => acum + item + " ", "");
+  console.log(str.trim().length);
+return "c"
+}
+
+smash(["hello", "im", "worker"])

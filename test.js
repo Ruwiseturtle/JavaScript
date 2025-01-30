@@ -86,4 +86,12 @@ var reverseSeq = function (n) {
 function squareSum(numbers) {
     return numbers.reduce(function (acum, item) { return acum + Math.pow(item, 2); }, 0);
 }
-console.log(squareSum([1, 2]));
+// console.log(squareSum([1, 2]));
+//  ***************************************************************************
+//9
+function smash(words) {
+    var str = words.reduce(function (acum, item) { return acum + item + " "; }, "");
+    console.log(str.trim().length);
+    return "c";
+}
+smash(["hello", "im", "worker"]);
