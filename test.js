@@ -1,6 +1,7 @@
 // 7 kyu → близько 20-30 Honor
 // 6 kyu → близько 75-100 Honor
 // 5 kyu → близько 200-300 Honor
+var _a;
 // 1 перевернути строку
 function solution(str) {
     return str.split("").reverse().join("");
@@ -97,6 +98,7 @@ function smash(words) {
 // smash(["hello", "im", "worker"])
 //  ***************************************************************************
 // В этом ката вам предлагается возвести в квадрат каждую цифру числа и сложить их.
+// 9
 var num = 9119;
 var str = num.toString();
 var sum = '';
@@ -104,4 +106,34 @@ var sum = '';
 for (var i = 0; i < str.length; i++) {
     sum = parseInt(str[i]) !== 0 ? sum + Math.pow(parseInt(str[i]), 2) : sum + 0;
 }
-console.log(sum);
+// console.log(sum);
+// export class Kata {
+//   static squareDigits(num: number) {
+//     // we can use '+' insted 'Number', '+' mean the data will be numerical
+//     // return +(String(num).split('').map(a => Number(a)**2).join(''));
+//     return Number(
+//       String(num)
+//         .split("")
+//         .map((a) => Number(a) ** 2)
+//         .join("")
+//     );
+//   }
+// }
+//  ***************************************************************************
+// 10
+var a = 0;
+var b = -1;
+var c = 0;
+a > b ? (_a = [b, a], a = _a[0], b = _a[1], _a) : null;
+for (var i = a; i <= b; i++) {
+    // console.log("i = "+i);  
+    c = c + i;
+}
+// console.log(c);
+//  ***************************************************************************
+// 11
+function past(h, m, s) {
+    var res = (h * 60 * 60 * 1000) + (m * 60 * 1000) + (s * 1000);
+    return res;
+}
+console.log(past(0, 0, 0));
