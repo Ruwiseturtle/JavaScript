@@ -118,4 +118,36 @@ function smash(words: string[]): string{
 return "c"
 }
 
-smash(["hello", "im", "worker"])
+// smash(["hello", "im", "worker"])
+
+//  ***************************************************************************
+// В этом ката вам предлагается возвести в квадрат каждую цифру числа и сложить их.
+// 9
+
+let num = 9119;
+let str = num.toString();
+let sum = '';
+// console.log(str.length);
+
+for (let i = 0; i < str.length; i++){
+  sum = parseInt(str[i]) !== 0 ? sum + parseInt(str[i])**2 : sum + 0;
+  
+}
+
+// console.log(sum);
+
+// export class Kata {
+//   static squareDigits(num: number) {
+//     // we can use '+' insted 'Number', '+' mean the data will be numerical
+//     // return +(String(num).split('').map(a => Number(a)**2).join(''));
+//     return Number(
+//       String(num)
+//         .split("")
+//         .map((a) => Number(a) ** 2)
+//         .join("")
+//     );
+//   }
+// }
+
+//  ***************************************************************************
+// 10

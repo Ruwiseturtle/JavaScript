@@ -94,4 +94,14 @@ function smash(words) {
     console.log(str.trim().length);
     return "c";
 }
-smash(["hello", "im", "worker"]);
+// smash(["hello", "im", "worker"])
+//  ***************************************************************************
+// В этом ката вам предлагается возвести в квадрат каждую цифру числа и сложить их.
+var num = 9119;
+var str = num.toString();
+var sum = '';
+// console.log(str.length);
+for (var i = 0; i < str.length; i++) {
+    sum = parseInt(str[i]) !== 0 ? sum + Math.pow(parseInt(str[i]), 2) : sum + 0;
+}
+console.log(sum);
