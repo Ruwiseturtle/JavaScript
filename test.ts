@@ -176,3 +176,27 @@ function past(h:number, m:number, s:number):number{
 //  ***************************************************************************
 // 12
 
+function basicOp(operation: string, value1: number, value2: number): number{
+  switch (operation) {
+    case '+':
+      return value1 + value2;
+    case '-':
+      return value1 - value2;
+    case '*':
+      return value1 * value2;
+    case '/':
+      return value1 / value2;
+    default:
+      return 0;
+  }
+
+  //  eval(`${value1}${operation}${value2}`); //альтернатива
+}
+
+// console.log(basicOp('+', 4, 7));
+// console.log(basicOp("-", 15, 18));
+// console.log(basicOp("*", 5, 5));
+// console.log(basicOp("/", 49, 7));
+
+//  ***************************************************************************
+// 13

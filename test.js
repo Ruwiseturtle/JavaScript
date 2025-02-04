@@ -131,9 +131,26 @@ for (var i = a; i <= b; i++) {
 }
 // console.log(c);
 //  ***************************************************************************
-// 11
+// 11 вернути кількість мілісекунд з опівночі. ф-ція примає години, хвилини та секунди
 function past(h, m, s) {
-    var res = (h * 60 * 60 * 1000) + (m * 60 * 1000) + (s * 1000);
-    return res;
+    return (h * 60 * 60 * 1000) + (m * 60 * 1000) + (s * 1000);
 }
-console.log(past(0, 0, 0));
+// console.log(past(0,0,0));
+//  ***************************************************************************
+// 12
+function basicOp(operation, value1, value2) {
+    switch (operation) {
+        case '+':
+            return value1 + value2;
+        case '-':
+            return value1 - value2;
+        case '*':
+            return value1 * value2;
+        case '/':
+            return value1 / value2;
+    }
+}
+console.log(basicOp('+', 4, 7));
+console.log(basicOp("-", 15, 18));
+console.log(basicOp("*", 5, 5));
+console.log(basicOp("/", 49, 7));
