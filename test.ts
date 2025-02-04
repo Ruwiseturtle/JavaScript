@@ -199,7 +199,7 @@ function basicOp(operation: string, value1: number, value2: number): number{
 // console.log(basicOp("/", 49, 7));
 
 //  ***************************************************************************
-// 13
+// 13 знайти саме коротке слово
 
 function findShort(s: string): number{
   let words = s.split(" "); 
@@ -211,3 +211,15 @@ function findShort(s: string): number{
 // }
 
 // console.log(findShort("findShort ddd w wewewe eeeeeeeeeeeeeeee dd"));
+
+//  ***************************************************************************
+// 14 вивести усі слова, які з 4 букв
+
+function friend(friends: string[]): string[]{
+  return friends.filter(word => word.length === 4);
+}
+
+// console.log(friend(["patrik", "dada", "Rizgik", "gaga"]));
+
+//  ***************************************************************************
+// 15

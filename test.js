@@ -158,10 +158,18 @@ function basicOp(operation, value1, value2) {
 // console.log(basicOp("*", 5, 5));
 // console.log(basicOp("/", 49, 7));
 //  ***************************************************************************
-// 13
+// 13 знайти саме коротке слово
 function findShort(s) {
     var words = s.split(" ");
-    console.log(words);
     return words.reduce(function (min, word) { return word.length < min.length ? word : min; }, words[0]).length;
 }
-console.log(findShort("findShort ddd w wewewe eeeeeeeeeeeeeeee dd"));
+// export function findShort(s: string): number {
+//   return Math.min(...s.split(" ").map((w) => w.length));
+// }
+// console.log(findShort("findShort ddd w wewewe eeeeeeeeeeeeeeee dd"));
+//  ***************************************************************************
+// 14 вивести усі слова, які з 4 букв
+function friend(friends) {
+    return friends.filter(function (word) { return word.length === 4; });
+}
+console.log(friend(["patrik", "dada", "Rizgik", "gaga"]));
