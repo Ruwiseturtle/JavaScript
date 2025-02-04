@@ -200,3 +200,14 @@ function basicOp(operation: string, value1: number, value2: number): number{
 
 //  ***************************************************************************
 // 13
+
+function findShort(s: string): number{
+  let words = s.split(" "); 
+  return words.reduce((min, word) => word.length < min.length ? word : min, words[0]).length;   
+}
+
+// export function findShort(s: string): number {
+//   return Math.min(...s.split(" ").map((w) => w.length));
+// }
+
+// console.log(findShort("findShort ddd w wewewe eeeeeeeeeeeeeeee dd"));
