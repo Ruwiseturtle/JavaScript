@@ -245,3 +245,62 @@ function solution1(str: string, ending: string): boolean{
 
 //  ***************************************************************************
 // 16
+
+function betterThenAverage(classPoint: number[], yourPoints: number): boolean{
+  let sum = classPoint.reduce((acum, item) => acum + item, 0);
+  let average = sum / classPoint.length;
+  return yourPoints > average;
+
+  // return classPoints.reduce((a, v) => a + v) / classPoints.length < yourPoints;
+}
+
+// console.log(betterThenAverage([100, 35, 27, 72, 15], 75));
+
+
+//  ***************************************************************************
+// 17
+
+function oddOrEven(array: number[]) {
+  let res = "";
+
+  if (array.length !== 0) {
+   res = array.reduce((prev, next) => prev + next) % 2 === 0 ? "even" : "odd";
+  }
+  else {
+    res = "even"
+  }
+  
+  return res
+}
+
+// console.log(oddOrEven([1]));
+
+//  ***************************************************************************
+// 18
+
+function isSquare(n: number): boolean{
+  
+  return Number.isInteger(Math.sqrt(n))
+}
+
+// console.log(isSquare(-1));
+
+//  ***************************************************************************
+// 19
+
+function getCount(str: string): number{
+  let vowels = ["a", "i", "o", "e", "u"];
+  let arrStr = str.split("");
+  console.log(arrStr);
+
+  let res: number = arrStr.reduce(
+    (acum: number, item: any) => (vowels.includes(item) ? acum + 1 : acum + 0),
+    0
+  );
+  return res;
+  // return [...str].filter((char) => "aeiou".includes(char)).length;
+}
+
+
+ 
+// console.log(getCount('abracadabra'));
