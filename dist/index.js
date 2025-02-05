@@ -219,11 +219,31 @@ function isSquare(n) {
 //  ***************************************************************************
 // 19
 function getCount(str) {
-    let vowels = ['a', 'i', 'o', 'e', 'u'];
-    let arrStr = str.split('');
+    let vowels = ["a", "i", "o", "e", "u"];
+    let arrStr = str.split("");
     console.log(arrStr);
     let res = arrStr.reduce((acum, item) => (vowels.includes(item) ? acum + 1 : acum + 0), 0);
     return res;
+    // return [...str].filter((char) => "aeiou".includes(char)).length;
 }
-console.log(getCount('abracadabra'));
+// console.log(getCount('abracadabra'));
+//  ***************************************************************************
+// 20
+function summation(n) {
+    let sum = 0;
+    for (let i = 0; i <= n; i++) {
+        console.log(i);
+        sum = sum + i;
+    }
+    // console.log(sum);
+    //  return (n * (n + 1)) / 2;
+}
+// summation(3);
+//  ***************************************************************************
+// 21
+function number(busStop) {
+    let res = busStop.reduce((acum, item) => acum + item[0] - item[1], 0);
+    return res;
+}
+console.log(number([[0, 0]]));
 //# sourceMappingURL=index.js.map
