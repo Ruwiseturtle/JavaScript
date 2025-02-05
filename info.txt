@@ -1,0 +1,2 @@
+для компіляції - npx tst
+для запуску    - node dist/index.js
