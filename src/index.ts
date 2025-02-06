@@ -360,10 +360,21 @@ function countBy(x: number, n: number): number[]{
 // 23
 function dnaStrand(dna: string) {
   let res = [...dna].map(item => {
-     
-  })
-  console.log(res);
-  
+    switch (item) {
+      case "A":
+        return "T";
+      case "T":
+        return "A";
+      case "C":
+        return "G";
+      case "G":
+        return "C";
+    }
+  }).join('');
+  // console.log(res);  
  }
 
- dnaStrand("ATTGC")
+// dnaStrand("GTAT");
+
+//  ***************************************************************************
+// 24

@@ -254,15 +254,34 @@ function countBy(x, n) {
     let i = x;
     let array = [];
     while (n !== 0) {
-        console.log(`перевірка: ${i % x}`);
-        console.log(`i: ${i} n: ${n}`);
         if (i % x === 0) {
             array.push(i);
             n--;
         }
         i++;
     }
+    //  for (let i = 1; i <= n; i++) {
+    //    array.push(x * i);
+    // }
     return array;
 }
-console.log(countBy(100, 6));
+// console.log(countBy(100, 6));
+//  ***************************************************************************
+// 23
+function dnaStrand(dna) {
+    let res = [...dna].map(item => {
+        switch (item) {
+            case "A":
+                return "T";
+            case "T":
+                return "A";
+            case "C":
+                return "G";
+            case "G":
+                return "C";
+        }
+    });
+    console.log(res);
+}
+dnaStrand("GTAT");
 //# sourceMappingURL=index.js.map
