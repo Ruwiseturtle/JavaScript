@@ -329,7 +329,41 @@ function number(busStop: [number, number][]): number{
   return busStop.reduce((acum, item) => acum + item[0] - item[1], 0);
   // return busStops.reduce((rem, [on, off]) => rem + (on - off), 0);
 }
-console.log(number([[0, 0]]));
+// console.log(number([[0, 0]]));
 
+//  ***************************************************************************
+// 22
 
+function countBy(x: number, n: number): number[]{
+ 
+  let i = x;
+  let array:number[] = [];
 
+  while (n !== 0) {
+    if (i % x === 0) {      
+      array.push(i);  
+      n--;
+    }
+    i++;
+  }
+  
+  //  for (let i = 1; i <= n; i++) {
+  //    array.push(x * i);
+  // }
+  
+  return array
+}
+
+// console.log(countBy(100, 6));
+
+//  ***************************************************************************
+// 23
+function dnaStrand(dna: string) {
+  let res = [...dna].map(item => {
+     
+  })
+  console.log(res);
+  
+ }
+
+ dnaStrand("ATTGC")
