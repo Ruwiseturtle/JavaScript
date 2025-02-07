@@ -378,3 +378,22 @@ function dnaStrand(dna: string) {
 
 //  ***************************************************************************
 // 24
+
+function rps(p1: string, p2: string): string{
+   if (p1 === p2) {
+     return "Draw!";
+  }
+  
+  let array = [
+    ["rock", "scissors"],
+    ["scissors", "paper"],
+    ["paper", "rock"],
+  ]; 
+
+  let res1 = array.find(item => item[0] === p1 && item[1] === p2);
+  let res2 = array.find((item) => item[0] === p2 && item[1] === p1);
+  
+  return res1 === undefined ? "Player 2 won!" : "Player 1 won!";
+}
+console.log( rps("scissors", "scissors"));
+

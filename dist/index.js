@@ -280,8 +280,26 @@ function dnaStrand(dna) {
             case "G":
                 return "C";
         }
-    });
-    console.log(res);
+    }).join('');
+    // console.log(res);  
 }
-dnaStrand("GTAT");
+// dnaStrand("GTAT");
+//  ***************************************************************************
+// 24
+function rps(p1, p2) {
+    let array = [
+        ["rock", "scissors"],
+        ["scissors", "paper"],
+        ["paper", "rock"],
+    ];
+    if (p1 === p2) {
+        return "Draw!";
+    }
+    let res1 = array.find(item => item[0] === p1 && item[1] === p2);
+    let res2 = array.find((item) => item[0] === p2 && item[1] === p1);
+    // console.log(res1);
+    // console.log(res2);
+    return res1 === undefined ? "Player 2 won!" : "Player 1 won!";
+}
+console.log(rps("scissors", "scissors"));
 //# sourceMappingURL=index.js.map
