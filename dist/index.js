@@ -287,19 +287,41 @@ function dnaStrand(dna) {
 //  ***************************************************************************
 // 24
 function rps(p1, p2) {
+    if (p1 === p2) {
+        return "Draw!";
+    }
     let array = [
         ["rock", "scissors"],
         ["scissors", "paper"],
         ["paper", "rock"],
     ];
-    if (p1 === p2) {
-        return "Draw!";
-    }
     let res1 = array.find(item => item[0] === p1 && item[1] === p2);
     let res2 = array.find((item) => item[0] === p2 && item[1] === p1);
-    // console.log(res1);
-    // console.log(res2);
     return res1 === undefined ? "Player 2 won!" : "Player 1 won!";
 }
-console.log(rps("scissors", "scissors"));
+// console.log( rps("scissors", "scissors"));
+//  ***************************************************************************
+// 25
+function doubleChar(str) {
+    return [...str].reduce((acum, item) => acum + item + item, "");
+}
+// console.log(doubleChar("balabaga"));
+//  ***************************************************************************
+// 26
+function points(games) {
+    return games.reduce((acum, item) => {
+        acum = item[0] === item[2] ? acum + 1 : acum + 0;
+        acum = Number(item[0]) > Number(item[2]) ? acum + 3 : acum + 0;
+        // acum = Number(item[0]) > Number(item[2]) ? 3 : Number(item[0]) < Number(item[2]) ? 0 : 1;
+        return acum;
+    }, 0);
+}
+// console.log(points(["1:0", "2:0"]));
+//     points = x > y ? 3 : x < y ? 0 : 1; скорочений вираз порівняння
+//  ***************************************************************************
+// 27
+function removeChar(str) {
+    return str.substring(1, str.length - 1);
+}
+console.log(removeChar("Banana"));
 //# sourceMappingURL=index.js.map
