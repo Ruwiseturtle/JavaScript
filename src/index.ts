@@ -426,8 +426,18 @@ function points(games: string[]): number{
 // 27
 
 function removeChar(str: string): string{  
-  return str.substring(1, str.length-1)
+  return str.substring(1, str.length - 1)
+  //  return str.slice(1, -1);
 }
 
-console.log(removeChar("Banana"));
+// console.log(removeChar("Banana"));
+
+//  ***************************************************************************
+// 28
+
+function feast(beast: string, dish: string): boolean{
+  return beast[0] === dish[0] && beast[beast.length-1] === dish[dish.length-1]
+}
+
+console.log(feast("brown bear", "bear claw"));
 
