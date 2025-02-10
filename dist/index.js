@@ -330,5 +330,14 @@ function removeChar(str) {
 function feast(beast, dish) {
     return beast[0] === dish[0] && beast[beast.length - 1] === dish[dish.length - 1];
 }
-console.log(feast("brown bear", "bear claw"));
+// console.log(feast("brown bear", "bear claw"));
+//  ***************************************************************************
+// 29
+function inuqueInOrder(iterable) {
+    if (typeof iterable === "string") {
+        iterable = iterable.split("");
+    }
+    return iterable.filter((item, index) => item !== iterable[index - 1]);
+}
+console.log(inuqueInOrder("AAAABBBBCCCCcDDDD"));
 //# sourceMappingURL=index.js.map
