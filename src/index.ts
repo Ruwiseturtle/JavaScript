@@ -530,5 +530,17 @@ function sumTwoSmallestNumbers(numbers: Array<number>): number{
   // return first + second;
 }
 
-console.log(sumTwoSmallestNumbers([5, 8, 12, 19, 22]));
+// console.log(sumTwoSmallestNumbers([5, 8, 12, 19, 22]));
+
+//  ***************************************************************************
+// 34
+
+function binaryArrayToNumber(arr: number[]): number{
+  return parseInt(arr.join(''), 2);
+}
+
+// console.log(binaryArrayToNumber([1, 0, 0, 1]));
+
+//  ***************************************************************************
+// 35
 

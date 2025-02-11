@@ -396,6 +396,14 @@ function openOrSenior(data) {
 function sumTwoSmallestNumbers(numbers) {
     numbers.sort((a, b) => a - b);
     return numbers[0] + numbers[1];
+    // const [first, sencond] = numbers.sort((a, b) => a - b);
+    // return first + second;
 }
-console.log(sumTwoSmallestNumbers([5, 8, 12, 19, 22]));
+// console.log(sumTwoSmallestNumbers([5, 8, 12, 19, 22]));
+//  ***************************************************************************
+// 34
+function binaryArrayToNumber(arr) {
+    return parseInt(arr.join(''), 2);
+}
+console.log(binaryArrayToNumber([1, 0, 0, 1]));
 //# sourceMappingURL=index.js.map
