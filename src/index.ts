@@ -452,5 +452,83 @@ function inuqueInOrder(iterable: string | (string | number)[]): (string | number
  return iterable.filter((item, index) => item !== iterable[index-1])
 }
 
-console.log(inuqueInOrder("AAAABBBBCCCCcDDDD"));
+// console.log(inuqueInOrder("AAAABBBBCCCCcDDDD"));
+
+//  ***************************************************************************
+// 30
+
+function addBinary(a: number, b: number): string{
+  let sum = a + b;
+  return sum.toString(2);
+}
+
+// console.log(addBinary(1,1));
+
+//  ***************************************************************************
+// 31
+
+function countSmileys(arr: string[]): number{
+  if (arr.length === 0) {
+    return 0;
+  }
+
+  let count: number = arr.reduce((acum, item) => {
+    // console.log(`${item} довжина ${item.length}`);
+    if (item.length === 2) {
+      if ((item[0] === ':' || item[0] === ';') && (item[1] === 'D' || item[1] === ')')) {
+        acum = acum + 1;        
+      }
+    }
+    else if (item.length === 3) {
+      if ((item[0] === ":" || item[0] === ";") && (item[1] === "-" || item[1] === "~") && (item[2] === "D" || item[2] === ")")) {
+        acum = acum + 1;
+      }
+    }
+    return acum;    
+  },0) 
+  return count;
+}
+
+// console.log(countSmileys([';(',':~>',':-}',':]', ':D', ':)']));
+
+//  ***************************************************************************
+// 32
+
+function openOrSenior(data: number[][]): string[]{
+  
+  let arrayString = data.reduce((acum:string[], item) => {
+    // console.log(item);
+    if (item[0] >= 55 && item[1] > 7) {
+      return [...acum, "Senior"];
+    }
+    return [...acum, "Open"];
+}, [])
+
+
+  return arrayString;
+  //  return data.map((x) => (x[0] >= 55 && x[1] > 7 ? "Senior" : "Open"));
+}
+
+// console.log(openOrSenior([
+//   [18, 20],
+//   [45, 2],
+//   [61, 12],
+//   [37, 6],
+//   [21, 21],
+//   [78, 9],
+// ]));
+
+
+//  ***************************************************************************
+// 33
+
+function sumTwoSmallestNumbers(numbers: Array<number>): number{
+  numbers.sort((a, b) => a - b);
+  return numbers[0] + numbers[1];
+
+  // const [first, sencond] = numbers.sort((a, b) => a - b);
+  // return first + second;
+}
+
+console.log(sumTwoSmallestNumbers([5, 8, 12, 19, 22]));
 
