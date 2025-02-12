@@ -441,20 +441,47 @@ function validatePin(pin) {
 //  ***************************************************************************
 // 38
 function accum(s) {
-    let res = '';
-    // for (let i = 0; i < s.length; i++){
-    //   console.log(`s[i]: ${s[i]} i:${i}`);
-    //   let str = s[i].repeat(i + 1);
-    //   res = res + str+'-';    
-    // }
-    let str = [...s].reduce((acum, item, index) => {
-        acum = acum + item.toUpperCase() + item.repeat(index) + '-';
+    return [...s].reduce((acum, item, index) => {
+        acum = acum + item.toUpperCase() + item.toLowerCase().repeat(index) + '-';
         return acum;
     }, '').slice(0, -1);
-    console.log(str);
-    // console.log(res.slice(0, -1));
-    return 's';
 }
-accum("abcd");
-// console.log(accum("abcd"));
+// accum("abcd"); //accum("abcd") -> "A-Bb-Ccc-Dddd"
+//  ***************************************************************************
+// 39
+String.prototype.toJadenCase = function () {
+    // Список скорочень, які не треба змінювати
+    const exceptions = [
+        "aren't",
+        "isn't",
+        "don't",
+        "can't",
+        "won't",
+        "shouldn't",
+        "couldn't",
+        "wouldn't",
+        "didn't",
+        "hasn't",
+        "haven't",
+    ];
+    // Розбиваємо рядок на слова, робимо кожне слово з великої літери, крім виключень
+    return this.split(" ")
+        .map((word) => {
+        // Якщо слово є у виключеннях, залишаємо його без змін
+        if (exceptions.includes(word.toLowerCase())) {
+            return word;
+        }
+        else {
+            // Перше слово з великої літери, решта з маленької
+            return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+        }
+    })
+        .join(" "); // Об'єднуємо слова в один рядок
+};
+//  ***************************************************************************
+// 40
+function areYouPlayingBandjo(name) {
+    return name.charAt(0).toLowerCase() === 'r' ? true : false;
+}
+console.log(areYouPlayingBandjo("Rdam"));
 //# sourceMappingURL=index.js.map
