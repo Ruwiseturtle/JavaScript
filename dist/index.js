@@ -405,5 +405,37 @@ function sumTwoSmallestNumbers(numbers) {
 function binaryArrayToNumber(arr) {
     return parseInt(arr.join(''), 2);
 }
-console.log(binaryArrayToNumber([1, 0, 0, 1]));
+// console.log(binaryArrayToNumber([1, 0, 0, 1]));
+//  ***************************************************************************
+// 35
+function findUnic(arr) {
+    arr.sort((a, b) => a - b);
+    let num1 = arr[0];
+    let num2 = arr[arr.length - 1];
+    return num1 === arr[1] ? num2 : num1;
+}
+// console.log(findUnic([1, 1, 1, 2, 1, 1]));
+//  ***************************************************************************
+// 36
+function countSheep(arrayOfSheep) {
+    return arrayOfSheep.filter(item => item === true).length;
+}
+// console.log(countSheep([
+//   true,
+//   true,
+//   true,
+//   false,
+//   false,
+//   true,
+//   true,
+// ]));
+//  ***************************************************************************
+// 37
+function validatePin(pin) {
+    if (pin.length !== 4 && pin.length !== 6) {
+        return false;
+    }
+    return /^\d+$/.test(pin);
+}
+console.log(validatePin("123"));
 //# sourceMappingURL=index.js.map
