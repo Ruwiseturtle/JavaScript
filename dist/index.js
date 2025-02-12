@@ -437,5 +437,24 @@ function validatePin(pin) {
     }
     return /^\d+$/.test(pin);
 }
-console.log(validatePin("123"));
+// console.log(validatePin("123"));
+//  ***************************************************************************
+// 38
+function accum(s) {
+    let res = '';
+    // for (let i = 0; i < s.length; i++){
+    //   console.log(`s[i]: ${s[i]} i:${i}`);
+    //   let str = s[i].repeat(i + 1);
+    //   res = res + str+'-';    
+    // }
+    let str = [...s].reduce((acum, item, index) => {
+        acum = acum + item.toUpperCase() + item.repeat(index) + '-';
+        return acum;
+    }, '').slice(0, -1);
+    console.log(str);
+    // console.log(res.slice(0, -1));
+    return 's';
+}
+accum("abcd");
+// console.log(accum("abcd"));
 //# sourceMappingURL=index.js.map

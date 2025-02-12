@@ -582,4 +582,18 @@ function validatePin(pin: string): boolean{
   return /^\d+$/.test(pin);
 }
 
-console.log(validatePin("123"));
+// console.log(validatePin("123"));
+
+//  ***************************************************************************
+// 38
+
+function accum(s: string): string{  
+  return [...s].reduce((acum, item, index) => {
+    acum = acum + item.toUpperCase() + item.repeat(index)+'-'
+    return acum
+  }, '').slice(0, -1);
+
+}
+
+accum("abcd"); //accum("abcd") -> "A-Bb-Ccc-Dddd"
+
