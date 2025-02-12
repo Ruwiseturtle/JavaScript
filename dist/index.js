@@ -1,5 +1,7 @@
 "use strict";
 // import { test } from "./test";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.G964 = void 0;
 // const button = document.querySelector("button")!;
 // const input = document.querySelector("input")!;
 // if (button && input) {
@@ -93,7 +95,7 @@ const reverseSeq = (n) => {
 //  ***************************************************************************
 //8
 function squareSum(numbers) {
-    return numbers.reduce((acum, item) => acum + item ** 2, 0);
+    return numbers.reduce((acum, item) => acum + Math.pow(item, 2), 0);
 }
 // console.log(squareSum([1, 2]));
 //  ***************************************************************************
@@ -112,7 +114,7 @@ let str = num.toString();
 let sum = '';
 // console.log(str.length);
 for (let i = 0; i < str.length; i++) {
-    sum = parseInt(str[i]) !== 0 ? sum + parseInt(str[i]) ** 2 : sum + 0;
+    sum = parseInt(str[i]) !== 0 ? sum + Math.pow(parseInt(str[i]), 2) : sum + 0;
 }
 // console.log(sum);
 // export class Kata {
@@ -449,39 +451,32 @@ function accum(s) {
 // accum("abcd"); //accum("abcd") -> "A-Bb-Ccc-Dddd"
 //  ***************************************************************************
 // 39
-String.prototype.toJadenCase = function () {
-    // Список скорочень, які не треба змінювати
-    const exceptions = [
-        "aren't",
-        "isn't",
-        "don't",
-        "can't",
-        "won't",
-        "shouldn't",
-        "couldn't",
-        "wouldn't",
-        "didn't",
-        "hasn't",
-        "haven't",
-    ];
-    // Розбиваємо рядок на слова, робимо кожне слово з великої літери, крім виключень
-    return this.split(" ")
-        .map((word) => {
-        // Якщо слово є у виключеннях, залишаємо його без змін
-        if (exceptions.includes(word.toLowerCase())) {
-            return word;
-        }
-        else {
-            // Перше слово з великої літери, решта з маленької
-            return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
-        }
-    })
-        .join(" "); // Об'єднуємо слова в один рядок
-};
+// String.prototype.toJadenCase = function () {
+//   return this.split(" ").map((word) => {
+//        return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()}).join(" "); 
+// };
+// interface String {
+//   toJadenCase(): string;
+// }
 //  ***************************************************************************
 // 40
 function areYouPlayingBandjo(name) {
     return name.charAt(0).toLowerCase() === 'r' ? true : false;
 }
-console.log(areYouPlayingBandjo("Rdam"));
+// console.log(areYouPlayingBandjo("Rdam"));
+//  ***************************************************************************
+// 41
+class G964 {
+}
+exports.G964 = G964;
+G964.digPow = (n, p) => {
+    let index = p;
+    let num = [...n.toString()].reduce((acum, item) => {
+        acum = acum + Math.pow(Number(item), index);
+        index++;
+        return acum;
+    }, 0);
+    return num * p;
+};
+console.log(G964.digPow(89, 1));
 //# sourceMappingURL=index.js.map

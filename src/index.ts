@@ -600,46 +600,51 @@ function accum(s: string): string{
 //  ***************************************************************************
 // 39
 
-String.prototype.toJadenCase = function () {
-  // Список скорочень, які не треба змінювати
-  const exceptions = [
-    "aren't",
-    "isn't",
-    "don't",
-    "can't",
-    "won't",
-    "shouldn't",
-    "couldn't",
-    "wouldn't",
-    "didn't",
-    "hasn't",
-    "haven't",
-  ];
+// String.prototype.toJadenCase = function () {
+  
+//   return this.split(" ").map((word) => {
+//        return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()}).join(" "); 
+// };
 
-  // Розбиваємо рядок на слова, робимо кожне слово з великої літери, крім виключень
-  return this.split(" ")
-    .map((word) => {
-      // Якщо слово є у виключеннях, залишаємо його без змін
-      if (exceptions.includes(word.toLowerCase())) {
-        return word;
-      } else {
-        // Перше слово з великої літери, решта з маленької
-        return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
-      }
-    })
-    .join(" "); // Об'єднуємо слова в один рядок
-};
-
-interface String {
-  toJadenCase(): string;
-}
+// interface String {
+//   toJadenCase(): string;
+// }
 
 //  ***************************************************************************
 // 40
 
 function areYouPlayingBandjo(name: string): boolean{
-
   return name.charAt(0).toLowerCase() === 'r' ? true: false
 }
 
-console.log(areYouPlayingBandjo("Rdam"));
+// console.log(areYouPlayingBandjo("Rdam"));
+
+//  ***************************************************************************
+// 41
+
+export class G964 {
+  public static digPow = (n: number, p: number) => {
+    let index = p;
+    let sum = [...n.toString()].reduce((acum, item) => {
+      acum = acum + Number(item) ** index;
+      index = index + 1;
+      return acum;
+    }, 0);
+
+    let k = sum / n;
+    return Number.isInteger(k) ? k : -1;
+  };
+
+  // public static digPow = (n: number, p: number) => {
+  //   const numbers = Array.from(String(n), Number);
+  //   const pows = numbers.map((n) => Math.pow(n, p++));
+  //   const powsSum = pows.reduce((a, b) => a + b);
+  //   const diff = powsSum / n;
+  //   return diff % 1 === 0 ? diff : -1;
+  // };
+}
+
+// console.log(G964.digPow(89, 1));
+
+//  ***************************************************************************
+// 42
