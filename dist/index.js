@@ -471,12 +471,20 @@ class G964 {
 exports.G964 = G964;
 G964.digPow = (n, p) => {
     let index = p;
-    let num = [...n.toString()].reduce((acum, item) => {
+    let sum = [...n.toString()].reduce((acum, item) => {
         acum = acum + Math.pow(Number(item), index);
-        index++;
+        index = index + 1;
         return acum;
     }, 0);
-    return num * p;
+    let k = sum / n;
+    return Number.isInteger(k) ? k : -1;
 };
-console.log(G964.digPow(89, 1));
+// console.log(G964.digPow(89, 1));
+//  ***************************************************************************
+// 42
+function abbrevName(name) {
+    let words = name.split(" ");
+    return words[0].charAt(0).toUpperCase() + "." + words[1].charAt(0).toUpperCase();
+}
+console.log(abbrevName("patrick feeney"));
 //# sourceMappingURL=index.js.map

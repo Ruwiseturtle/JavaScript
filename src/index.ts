@@ -648,3 +648,11 @@ export class G964 {
 
 //  ***************************************************************************
 // 42
+
+function abbrevName(name: string): string{
+  let words = name.split(" ");
+  return words[0].charAt(0).toUpperCase() + "." + words[1].charAt(0).toUpperCase();
+}
+
+console.log(abbrevName("patrick feeney"));
+
