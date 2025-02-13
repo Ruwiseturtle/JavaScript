@@ -487,4 +487,39 @@ function abbrevName(name) {
     return words[0].charAt(0).toUpperCase() + "." + words[1].charAt(0).toUpperCase();
 }
 console.log(abbrevName("patrick feeney"));
+//  ***************************************************************************
+// 43
+// employed | vacation 
+// true     | true     => false
+// true     | false    => true
+// false    | true     => false
+// false | false    => false
+function setAlarm(employed, vacation) {
+    return employed && !vacation;
+}
+//  ***************************************************************************
+// 44
+function towerBuilder(nFloors) {
+    let count = 1;
+    let arr = [];
+    for (let a = 0; a < nFloors; a++) {
+        let str = ' '.repeat(nFloors - a - 1);
+        console.log(nFloors - a - 1);
+        // console.log(`str:${str}end`);
+        for (let b = 0; b < count; b++) {
+            str = str + '*';
+        }
+        str = str + ' '.repeat(nFloors - a - 1);
+        count = count + 2;
+        arr.push(str);
+        // console.log(str);
+        str = '';
+    }
+    // let trims = (arr[arr.length - 1].length - 1) / 2;
+    // arr[0] = " ".repeat(trims) + arr[0] + ' '.repeat(trims);
+    console.log(arr);
+    // console.log(trims);
+    return [];
+}
+towerBuilder(7);
 //# sourceMappingURL=index.js.map

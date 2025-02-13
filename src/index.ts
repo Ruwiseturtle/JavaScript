@@ -656,3 +656,54 @@ function abbrevName(name: string): string{
 
 console.log(abbrevName("patrick feeney"));
 
+//  ***************************************************************************
+// 43
+// employed | vacation 
+// true     | true     => false
+// true     | false    => true
+// false    | true     => false
+// false | false    => false
+
+function setAlarm(employed: boolean, vacation: boolean) {
+  return employed && !vacation;
+}
+
+//  ***************************************************************************
+// 44
+
+function towerBuilder(nFloors: number): string[]{
+  let count = 1;
+  let arr = [];
+
+  for (let a = 0; a < nFloors; a++){
+    let str = ' '.repeat(nFloors - a-1);
+    
+    for (let b = 0; b < count; b++){
+      str = str + '*';
+    }
+
+    str = str + ' '.repeat(nFloors - a-1);   
+    count = count + 2;
+    arr.push(str);
+    
+    str = '';
+  }
+  return arr
+}
+
+towerBuilder(7);
+
+// export const towerBuilder = (nFloors: number): string[] => {
+//   const tower = [];
+//   for (let i = 1, nStars = 1; i <= nFloors; i++, nStars += 2) {
+//     tower.push(
+//       " ".repeat(nFloors - i) + "*".repeat(nStars) + " ".repeat(nFloors - i)
+//     );
+//   }
+//   return tower;
+// };
+
+//  ***************************************************************************
+// 45
+
+
