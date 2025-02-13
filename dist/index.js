@@ -1,7 +1,7 @@
 "use strict";
 // import { test } from "./test";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.G964 = void 0;
+exports.likes = exports.G964 = void 0;
 // const button = document.querySelector("button")!;
 // const input = document.querySelector("input")!;
 // if (button && input) {
@@ -486,7 +486,7 @@ function abbrevName(name) {
     let words = name.split(" ");
     return words[0].charAt(0).toUpperCase() + "." + words[1].charAt(0).toUpperCase();
 }
-console.log(abbrevName("patrick feeney"));
+// console.log(abbrevName("patrick feeney"));
 //  ***************************************************************************
 // 43
 // employed | vacation 
@@ -504,22 +504,54 @@ function towerBuilder(nFloors) {
     let arr = [];
     for (let a = 0; a < nFloors; a++) {
         let str = ' '.repeat(nFloors - a - 1);
-        console.log(nFloors - a - 1);
-        // console.log(`str:${str}end`);
         for (let b = 0; b < count; b++) {
             str = str + '*';
         }
         str = str + ' '.repeat(nFloors - a - 1);
         count = count + 2;
         arr.push(str);
-        // console.log(str);
         str = '';
     }
-    // let trims = (arr[arr.length - 1].length - 1) / 2;
-    // arr[0] = " ".repeat(trims) + arr[0] + ' '.repeat(trims);
-    console.log(arr);
-    // console.log(trims);
-    return [];
+    return arr;
 }
-towerBuilder(7);
+// towerBuilder(7);
+// export const towerBuilder = (nFloors: number): string[] => {
+//   const tower = [];
+//   for (let i = 1, nStars = 1; i <= nFloors; i++, nStars += 2) {
+//     tower.push(
+//       " ".repeat(nFloors - i) + "*".repeat(nStars) + " ".repeat(nFloors - i)
+//     );
+//   }
+//   return tower;
+// };
+//  ***************************************************************************
+// 45
+const likes = (a) => {
+    if (a.length === 0) {
+        return "no one likes this";
+    }
+    else if (a.length === 1) {
+        return `${a[0]} likes this`;
+    }
+    else if (a.length === 2) {
+        return `${a[0]} and ${a[1]} like this`;
+    }
+    else if (a.length === 3) {
+        return `${a[0]}, ${a[1]} and ${a[2]} like this`;
+    }
+    else if (a.length === 4) {
+        return `${a[0]}, ${a[1]} and 2 others like this`;
+    }
+    else {
+        return `${a[0]}, ${a[1]} and ${a.length - 2} others like this`;
+    }
+};
+exports.likes = likes;
+// console.log(likes(["Jacob", "Alex"]));
+//  ***************************************************************************
+// 46
+function isIsogram(str) {
+    return [...new Set([...str])].length === str.length;
+}
+console.log(isIsogram(""));
 //# sourceMappingURL=index.js.map

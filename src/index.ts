@@ -654,7 +654,7 @@ function abbrevName(name: string): string{
   return words[0].charAt(0).toUpperCase() + "." + words[1].charAt(0).toUpperCase();
 }
 
-console.log(abbrevName("patrick feeney"));
+// console.log(abbrevName("patrick feeney"));
 
 //  ***************************************************************************
 // 43
@@ -691,7 +691,7 @@ function towerBuilder(nFloors: number): string[]{
   return arr
 }
 
-towerBuilder(7);
+// towerBuilder(7);
 
 // export const towerBuilder = (nFloors: number): string[] => {
 //   const tower = [];
@@ -706,4 +706,31 @@ towerBuilder(7);
 //  ***************************************************************************
 // 45
 
+export const likes = (a: string[]): string => {
+  if (a.length === 0) {
+    return "no one likes this";
+  } else if (a.length === 1) {
+    return `${a[0]} likes this`;
+  } else if (a.length === 2) {
+    return `${a[0]} and ${a[1]} like this`;
+  } else if (a.length === 3) {
+    return `${a[0]}, ${a[1]} and ${a[2]} like this`;
+  } else if (a.length === 4) {
+    return `${a[0]}, ${a[1]} and 2 others like this`;
+  }
+  else {
+    return `${a[0]}, ${a[1]} and ${a.length - 2} others like this`;
+  }
+  
+}
 
+// console.log(likes(["Jacob", "Alex"]));
+
+//  ***************************************************************************
+// 46
+
+function isIsogram(str: string): boolean{
+  return [...new Set([...str.toLowerCase()])].length === str.length
+}
+
+console.log(isIsogram(""));
