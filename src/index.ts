@@ -733,4 +733,14 @@ function isIsogram(str: string): boolean{
   return [...new Set([...str.toLowerCase()])].length === str.length
 }
 
-console.log(isIsogram(""));
+// console.log(isIsogram("lkjjoijoijiugytfdtrd"));
+
+//  ***************************************************************************
+// 47
+
+function sumStr(a: string, b: string): string{ 
+  return (Number(a) + Number(b)).toString();
+}
+
+console.log(sumStr('4', '5'));
+

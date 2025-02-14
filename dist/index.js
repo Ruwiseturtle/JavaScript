@@ -551,7 +551,13 @@ exports.likes = likes;
 //  ***************************************************************************
 // 46
 function isIsogram(str) {
-    return [...new Set([...str])].length === str.length;
+    return [...new Set([...str.toLowerCase()])].length === str.length;
 }
-console.log(isIsogram(""));
+// console.log(isIsogram("lkjjoijoijiugytfdtrd"));
+//  ***************************************************************************
+// 47
+function sumStr(a, b) {
+    return (Number(a) + Number(b)).toString();
+}
+console.log(sumStr('4', '5'));
 //# sourceMappingURL=index.js.map
