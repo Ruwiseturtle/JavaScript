@@ -559,5 +559,37 @@ function isIsogram(str) {
 function sumStr(a, b) {
     return (Number(a) + Number(b)).toString();
 }
-console.log(sumStr('4', '5'));
+// console.log(sumStr('4', '5'));
+//  ***************************************************************************
+// 48
+function reverseWord(str) {
+    return str
+        .split(" ")
+        .map((word) => word.split("").reverse().join(""))
+        .join(" ");
+}
+// reverseWord("This is an example!"); //"sihT si na !elpmaxe"
+//  ***************************************************************************
+// 49
+function comp(a1, a2) {
+    if (a1 === null || a2 === null || (a1.length !== a2.length)) {
+        return false;
+    }
+    a1 = a1.map(item => Math.pow(item, 2)).sort();
+    a2.sort();
+    let res = a1.find((item, index) => item !== a2[index]);
+    return res === undefined ? true : false;
+}
+//  if (!(a1 && a2) || a1.length !== a2.length) return false;
+// return a1.map(x => x * x).sort().toString() === a2.sort().toString();
+console.log(comp([121, 144, 19, 161, 19, 144, 19, 11], [121, 14641, 20736, 361, 25921, 361, 20736, 361]));
+//  ***************************************************************************
+// 50
+function arrayDiff(a, b) {
+    // a.length > b.length ? ([a, b] = [b, a]) : null;
+    return a.filter(item => !b.includes(item));
+}
+console.log(arrayDiff([], [4, 5]));
+// arrayDiff([1, 2, 2, 2, 3], [2])
+// arrayDiff([2], [1, 2, 2, 2, 3]);
 //# sourceMappingURL=index.js.map

@@ -742,5 +742,55 @@ function sumStr(a: string, b: string): string{
   return (Number(a) + Number(b)).toString();
 }
 
-console.log(sumStr('4', '5'));
+// console.log(sumStr('4', '5'));
 
+//  ***************************************************************************
+// 48
+
+function reverseWord(str: string): string{
+  
+  return str
+    .split(" ")
+    .map((word) => word.split("").reverse().join(""))
+    .join(" ");
+}
+
+// reverseWord("This is an example!"); //"sihT si na !elpmaxe"
+
+//  ***************************************************************************
+// 49
+
+function comp(a1: number[] | null, a2: number[] | null): boolean{
+  if (a1 ===null || a2 === null || (a1.length !== a2.length)) {
+    return false;
+  }
+   
+  a1 = a1.map(item => item ** 2).sort();
+  a2.sort();
+  
+  let res = a1.find((item, index) => item !== a2[index])
+  
+  return res === undefined? true: false
+}
+
+//  if (!(a1 && a2) || a1.length !== a2.length) return false;
+// return a1.map(x => x * x).sort().toString() === a2.sort().toString();
+   
+// console.log(comp(
+//     [121, 144, 19, 161, 19, 144, 19, 11],
+//     [121, 14641, 20736, 361, 25921, 361, 20736, 361]
+//   )
+// );
+
+//  ***************************************************************************
+// 50
+
+function arrayDiff(a: number[], b: number[]): number[]{
+  // a.length > b.length ? ([a, b] = [b, a]) : null;
+  return a.filter(item => !b.includes(item));
+}
+
+// console.log(arrayDiff([], [4,5]));
+
+//  ***************************************************************************
+// 51
