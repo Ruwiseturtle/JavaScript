@@ -809,5 +809,31 @@ const isPangram = (phrase: string): boolean => {
   return true
 }
 
-console.log(isPangram("The quick brown fox jumps over the lazy dog"));
+// export const isPangram = (phrase: string): boolean => new Set(phrase.toLowerCase().match(/[a-z]/g)).size === 26;
+
+// console.log(isPangram("The quick brown fox jumps over the lazy dog"));
+
+//  ***************************************************************************
+// 52
+
+function isValidWalk(walk: string[]) {
+  if (walk.length !== 10) {
+    return false;
+  }
+
+  let nCount = 0, sCount = 0, eCount = 0,  wCount = 0;
+
+  // Підраховуємо кількість кожного напрямку
+  for (let i = 0; i < walk.length; i++) {
+    if (walk[i] === "n") nCount++;
+    if (walk[i] === "s") sCount++;
+    if (walk[i] === "e") eCount++;
+    if (walk[i] === "w") wCount++;
+  }
+
+  // Перевіряємо, чи кількість півночі і півдня однакова, і схід-захід теж
+  return nCount === sCount && eCount === wCount;  
+}
+
+// console.log(isValidWalk(["w", "e", "w", "e", "w", "e", "w", "e", "w", "s"]));
 

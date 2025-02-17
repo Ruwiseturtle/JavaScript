@@ -606,5 +606,18 @@ const isPangram = (phrase) => {
     }
     return true;
 };
-console.log(isPangram("The quick brown fox jumps over the lazy do"));
+// export const isPangram = (phrase: string): boolean => new Set(phrase.toLowerCase().match(/[a-z]/g)).size === 26;
+// console.log(isPangram("The quick brown fox jumps over the lazy dog"));
+//  ***************************************************************************
+// 52
+function isValidWalk(walk) {
+    if (walk.length !== 10) {
+        return false;
+    }
+    let [a, b] = new Set([...walk]);
+    let array1 = walk.filter(item => item === a).length;
+    let array2 = walk.filter((item) => item === b).length;
+    return array1 === array2;
+}
+console.log(isValidWalk(["w", "e", "w", "e", "w", "e", "w", "e", "w", "s"]));
 //# sourceMappingURL=index.js.map
