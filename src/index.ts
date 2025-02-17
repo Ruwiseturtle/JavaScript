@@ -794,3 +794,20 @@ function arrayDiff(a: number[], b: number[]): number[]{
 
 //  ***************************************************************************
 // 51
+
+const isPangram = (phrase: string): boolean => {
+  let lowerPhrase = phrase.toLowerCase();
+
+  for (let i = 97; i <= 122; i++){   
+    let letter = String.fromCharCode(i);
+
+    if (!lowerPhrase.includes(letter)) {
+      return false;
+    }
+  }
+
+  return true
+}
+
+console.log(isPangram("The quick brown fox jumps over the lazy dog"));
+

@@ -582,14 +582,29 @@ function comp(a1, a2) {
 }
 //  if (!(a1 && a2) || a1.length !== a2.length) return false;
 // return a1.map(x => x * x).sort().toString() === a2.sort().toString();
-console.log(comp([121, 144, 19, 161, 19, 144, 19, 11], [121, 14641, 20736, 361, 25921, 361, 20736, 361]));
+// console.log(comp(
+//     [121, 144, 19, 161, 19, 144, 19, 11],
+//     [121, 14641, 20736, 361, 25921, 361, 20736, 361]
+//   )
+// );
 //  ***************************************************************************
 // 50
 function arrayDiff(a, b) {
     // a.length > b.length ? ([a, b] = [b, a]) : null;
     return a.filter(item => !b.includes(item));
 }
-console.log(arrayDiff([], [4, 5]));
-// arrayDiff([1, 2, 2, 2, 3], [2])
-// arrayDiff([2], [1, 2, 2, 2, 3]);
+// console.log(arrayDiff([], [4,5]));
+//  ***************************************************************************
+// 51
+const isPangram = (phrase) => {
+    let lowerPhrase = phrase.toLowerCase();
+    for (let i = 97; i <= 122; i++) {
+        let letter = String.fromCharCode(i);
+        if (!lowerPhrase.includes(letter)) {
+            return false;
+        }
+    }
+    return true;
+};
+console.log(isPangram("The quick brown fox jumps over the lazy do"));
 //# sourceMappingURL=index.js.map
