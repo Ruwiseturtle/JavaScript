@@ -837,3 +837,11 @@ function isValidWalk(walk: string[]) {
 
 // console.log(isValidWalk(["w", "e", "w", "e", "w", "e", "w", "e", "w", "s"]));
 
+//  ***************************************************************************
+// 53
+
+const testEven = (n: number): boolean => {
+   return n % 2 === 0;
+}
+
+// testEven(2.5)

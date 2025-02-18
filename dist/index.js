@@ -614,10 +614,27 @@ function isValidWalk(walk) {
     if (walk.length !== 10) {
         return false;
     }
-    let [a, b] = new Set([...walk]);
-    let array1 = walk.filter(item => item === a).length;
-    let array2 = walk.filter((item) => item === b).length;
-    return array1 === array2;
+    let nCount = 0, sCount = 0, eCount = 0, wCount = 0;
+    // Підраховуємо кількість кожного напрямку
+    for (let i = 0; i < walk.length; i++) {
+        if (walk[i] === "n")
+            nCount++;
+        if (walk[i] === "s")
+            sCount++;
+        if (walk[i] === "e")
+            eCount++;
+        if (walk[i] === "w")
+            wCount++;
+    }
+    // Перевіряємо, чи кількість півночі і півдня однакова, і схід-захід теж
+    return nCount === sCount && eCount === wCount;
 }
-console.log(isValidWalk(["w", "e", "w", "e", "w", "e", "w", "e", "w", "s"]));
+// console.log(isValidWalk(["w", "e", "w", "e", "w", "e", "w", "e", "w", "s"]));
+//  ***************************************************************************
+// 53
+const testEven = (n) => {
+    console.log(n % 2 === 0);
+    return true;
+};
+testEven(2.5);
 //# sourceMappingURL=index.js.map
