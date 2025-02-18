@@ -1,5 +1,7 @@
 // import { test } from "./test";
 
+import { log } from "node:console";
+
 // const button = document.querySelector("button")!;
 // const input = document.querySelector("input")!;
 
@@ -872,4 +874,46 @@ function longestConsec(strarr: string[], k: number): string{
 // longestConsec(["zone", "abigail", "theta", "form", "libe", "zas", "theta", "abigail"],2);
 
 //  ***************************************************************************
-// 55
+// 55 знаходимо скільки букв дублюється більше одного разу
+
+function dublicateCount(text: string): number{
+  const myMap = new Map();
+
+  [...text.toLocaleLowerCase()].map(item => {          
+    myMap.set(item, (myMap.get(item) || 0) + 1);
+  })
+
+  myMap.forEach((value, key) => {
+    if (value === 1) {
+      myMap.delete(key);
+    }
+  })
+  
+  return myMap.size
+}
+
+// console.log(dublicateCount("Indivisibilities"));
+
+//  ***************************************************************************
+// 56  числа трібоначчі
+
+function tribonacci([a, b, c]: [number, number, number], n: number): number[]{
+  if (n === 0) return [];
+  if (n <= 3)  return [a, b, c].slice(0, n);
+
+  let newArray = [a, b, c];
+ 
+  for (let i = 3; i < n; i++){
+    let sum = newArray[i - 1] + newArray[i - 2] + newArray[i - 3];
+    // console.log(`i: ${i} sum ${sum}`);
+    newArray.push(sum);    
+  }  
+  return newArray;
+}
+  
+// console.log(tribonacci([0.5, 0.5, 0.5], 30));
+
+//  ***************************************************************************
+// 57
+
+
