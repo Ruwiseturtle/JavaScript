@@ -633,8 +633,28 @@ function isValidWalk(walk) {
 //  ***************************************************************************
 // 53
 const testEven = (n) => {
-    console.log(n % 2 === 0);
-    return true;
+    return n % 2 === 0;
 };
-testEven(2.5);
+// testEven(2.5)
+//  ***************************************************************************
+// 54
+function longestConsec(strarr, k) {
+    let n = strarr.length;
+    if (n === 0 || k > n || k <= 0) {
+        return '';
+    }
+    let arrayNew = strarr.map((Item, index) => {
+        if (index < strarr.length - (k - 1)) {
+            let str = '';
+            for (let i = 0; i < k; i++) {
+                str = str + strarr[index + i];
+            }
+            return str;
+        }
+        return '';
+    }).reduce((longest, current) => current.length > longest.length ? current : longest);
+    console.log(arrayNew);
+    return arrayNew;
+}
+longestConsec(["zone", "abigail", "theta", "form", "libe", "zas", "theta", "abigail"], 2);
 //# sourceMappingURL=index.js.map

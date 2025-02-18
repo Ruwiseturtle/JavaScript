@@ -845,3 +845,31 @@ const testEven = (n: number): boolean => {
 }
 
 // testEven(2.5)
+
+//  ***************************************************************************
+// 54
+
+function longestConsec(strarr: string[], k: number): string{
+  let n = strarr.length;
+  if (n === 0 || k > n || k <= 0) {
+    return '';
+  }  
+
+  let arrayNew = strarr.map((Item, index) => {
+    if (index < strarr.length - (k - 1)) {
+      let str = '';
+      for (let i = 0; i < k; i++){
+        str = str + strarr[index + i];
+      }
+      return str;
+    }
+    return ''
+  }).reduce((longest, current) => current.length > longest.length? current : longest);
+
+  return arrayNew
+}
+  
+// longestConsec(["zone", "abigail", "theta", "form", "libe", "zas", "theta", "abigail"],2);
+
+//  ***************************************************************************
+// 55
