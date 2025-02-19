@@ -1003,3 +1003,54 @@ function printerError(s: string): string{
 //  ***************************************************************************
 // 61
 
+function countPositivesSumNegatives(input: any) {
+  if (!input || input.length === 0) return [];
+
+  return input.reduce((accum:any, item:number) => {
+    if (item > 0) {
+      accum[0] = accum[0] + 1;
+    return accum
+    }
+    else {
+      accum[1] = accum[1] + item;
+      return accum
+    }
+  }, [0,0])
+}
+
+// console.log(countPositivesSumNegatives([0,2,3,0,5,6,7,8,9,10,-11,-12,-13,-14])
+
+// export function countPositivesSumNegatives(input: any) {
+//   return input && input.length
+//     ? [
+//         input.filter((p: number) => p > 0).length,
+//         input
+//           .filter((n: number) => n < 0)
+//           .reduce((a: number, b: number) => a + b, 0),
+//       ]
+//     : [];
+// }
+
+
+//  ***************************************************************************
+// 62
+
+function isPalindrome(x: string): boolean{
+  if (x.length === 1) return true;
+  let lengthOfHalfStr = Math.trunc(x.length / 2);
+  let halfStr1 = x.toLowerCase().slice(0, lengthOfHalfStr);
+  let halfStr2 = x.toLowerCase().slice(-lengthOfHalfStr).split('').reverse().join('');
+
+  return halfStr1 === halfStr2 ? true : false;
+}
+
+// export function isPalindrome(x: string): boolean {
+//   return x.toLowerCase().split("").reverse().join("") == x.toLowerCase();
+// } !!!!!!!!!!!!!!!!!!!!!!!!!!
+
+// console.log(isPalindrome("madam"));
+// console.log(isPalindrome("abba"));
+
+//  ***************************************************************************
+// 63
+

@@ -750,15 +750,55 @@ function gooseFilter(birds) {
 //     "Blue Swedish",
 //   ])
 // );
+//  ***************************************************************************
+// 60 знайти скільки букв не в діапазоні від a до m і повернути рядок у форматі s/d (s-к-сть букв які не в діапазоні d-довжина строки)
 function printerError(s) {
     let lengthS = s.length;
     let countErrors = 0;
-    [...s.toLocaleLowerCase()].map(item => {
-        if (item.charCodeAt(0) < 97 || item.charCodeAt(0) > 109) {
-            countErrors++;
-        }
+    [...s.toLowerCase()].map(item => {
+        item.charCodeAt(0) < 97 || item.charCodeAt(0) > 109 ? countErrors++ : countErrors;
     });
     return "" + countErrors + "/" + lengthS;
 }
-console.log(printerError("aaaxbbbbyyhwawiwjjjwwm"));
+// console.log(printerError("aaaxbbbbyyhwawiwjjjwwm"));
+//  ***************************************************************************
+// 61
+function countPositivesSumNegatives(input) {
+    if (!input || input.length === 0)
+        return [];
+    return input.reduce((accum, item) => {
+        if (item > 0) {
+            accum[0] = accum[0] + 1;
+            return accum;
+        }
+        else {
+            accum[1] = accum[1] + item;
+            return accum;
+        }
+    }, [0, 0]);
+}
+// console.log(countPositivesSumNegatives([0,2,3,0,5,6,7,8,9,10,-11,-12,-13,-14])
+// export function countPositivesSumNegatives(input: any) {
+//   return input && input.length
+//     ? [
+//         input.filter((p: number) => p > 0).length,
+//         input
+//           .filter((n: number) => n < 0)
+//           .reduce((a: number, b: number) => a + b, 0),
+//       ]
+//     : [];
+// }
+//  ***************************************************************************
+// 62
+function isPalindrome(x) {
+    let lengthOfHalfStr = Math.trunc(x.length / 2);
+    let halfStr1 = x.toLowerCase().slice(0, lengthOfHalfStr);
+    let halfStr2 = x.toLowerCase().slice(-lengthOfHalfStr).split('').reverse().join('');
+    console.log(lengthOfHalfStr);
+    console.log(halfStr1);
+    console.log(halfStr2);
+    return halfStr1 === halfStr2 ? true : false;
+}
+console.log(isPalindrome("madam"));
+console.log(isPalindrome("abba"));
 //# sourceMappingURL=index.js.map
