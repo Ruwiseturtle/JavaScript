@@ -737,16 +737,28 @@ function gooseFilter(birds) {
         "Pilgrim",
         "Steinbacher",
     ];
-    let withoutGoose = birds.filter(item => !geese.includes(item));
-    return withoutGoose;
+    return birds.filter(item => !geese.includes(item));
 }
-console.log(gooseFilter([
-    "Mallard",
-    "Hook Bill",
-    "African",
-    "Crested",
-    "Pilgrim",
-    "Toulouse",
-    "Blue Swedish",
-]));
+// console.log(
+//   gooseFilter([
+//     "Mallard",
+//     "Hook Bill",
+//     "African",
+//     "Crested",
+//     "Pilgrim",
+//     "Toulouse",
+//     "Blue Swedish",
+//   ])
+// );
+function printerError(s) {
+    let lengthS = s.length;
+    let countErrors = 0;
+    [...s.toLocaleLowerCase()].map(item => {
+        if (item.charCodeAt(0) < 97 || item.charCodeAt(0) > 109) {
+            countErrors++;
+        }
+    });
+    return "" + countErrors + "/" + lengthS;
+}
+console.log(printerError("aaaxbbbbyyhwawiwjjjwwm"));
 //# sourceMappingURL=index.js.map

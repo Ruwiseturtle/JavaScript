@@ -972,14 +972,34 @@ function gooseFilter(birds: string[]): string[]{
   return birds.filter(item => !geese.includes(item));
 }
 
-console.log(
-  gooseFilter([
-    "Mallard",
-    "Hook Bill",
-    "African",
-    "Crested",
-    "Pilgrim",
-    "Toulouse",
-    "Blue Swedish",
-  ])
-);
+// console.log(
+//   gooseFilter([
+//     "Mallard",
+//     "Hook Bill",
+//     "African",
+//     "Crested",
+//     "Pilgrim",
+//     "Toulouse",
+//     "Blue Swedish",
+//   ])
+// );
+
+//  ***************************************************************************
+// 60 знайти скільки букв не в діапазоні від a до m і повернути рядок у форматі s/d (s-к-сть букв які не в діапазоні d-довжина строки)
+
+function printerError(s: string): string{
+  let lengthS = s.length;
+  let countErrors = 0;
+
+ [...s.toLowerCase()].map(item => {
+    item.charCodeAt(0) < 97 || item.charCodeAt(0) > 109? countErrors++ : countErrors;    
+  })
+  
+  return "" + countErrors + "/" + lengthS;
+}
+
+// console.log(printerError("aaaxbbbbyyhwawiwjjjwwm"));
+
+//  ***************************************************************************
+// 61
+
