@@ -726,5 +726,27 @@ function rentalCarCost(d) {
         return cost - 20;
     return cost;
 }
-console.log(rentalCarCost(7));
+// console.log(rentalCarCost(7));
+//  ***************************************************************************
+// 59
+function gooseFilter(birds) {
+    const geese = [
+        "African",
+        "Roman Tufted",
+        "Toulouse",
+        "Pilgrim",
+        "Steinbacher",
+    ];
+    let withoutGoose = birds.filter(item => !geese.includes(item));
+    return withoutGoose;
+}
+console.log(gooseFilter([
+    "Mallard",
+    "Hook Bill",
+    "African",
+    "Crested",
+    "Pilgrim",
+    "Toulouse",
+    "Blue Swedish",
+]));
 //# sourceMappingURL=index.js.map

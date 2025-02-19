@@ -955,4 +955,31 @@ function rentalCarCost(d: number): number{
   return cost
 }
 
-console.log(rentalCarCost(7));
+// console.log(rentalCarCost(7));
+
+//  ***************************************************************************
+// 59
+
+function gooseFilter(birds: string[]): string[]{
+  const geese: string[] = [
+    "African",
+    "Roman Tufted",
+    "Toulouse",
+    "Pilgrim",
+    "Steinbacher",
+  ];
+
+  return birds.filter(item => !geese.includes(item));
+}
+
+console.log(
+  gooseFilter([
+    "Mallard",
+    "Hook Bill",
+    "African",
+    "Crested",
+    "Pilgrim",
+    "Toulouse",
+    "Blue Swedish",
+  ])
+);
