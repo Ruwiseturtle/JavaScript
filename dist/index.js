@@ -674,19 +674,57 @@ function dublicateCount(text) {
 //  ***************************************************************************
 // 56  числа трібоначчі
 function tribonacci([a, b, c], n) {
-    if (n === 0) {
+    if (n === 0)
         return [];
-    }
-    else if (n <= 3) {
+    if (n <= 3)
         return [a, b, c].slice(0, n);
-    }
     let newArray = [a, b, c];
-    for (let i = 3; i < 10; i++) {
+    for (let i = 3; i < n; i++) {
         let sum = newArray[i - 1] + newArray[i - 2] + newArray[i - 3];
         // console.log(`i: ${i} sum ${sum}`);
         newArray.push(sum);
     }
     return newArray;
 }
-console.log(tribonacci([0.5, 0.5, 0.5], 30));
+// console.log(tribonacci([0.5, 0.5, 0.5], 30));
+// export function tribonacci(
+//   [a, b, c]: [number, number, number],
+//   n: number
+// ): number[] {
+//   if (n == 0) return [];
+//   if (n == 1) return [a];
+//   if (n == 2) return [a, b];
+//   if (n == 3) return [a, b, c];
+//   var result: number[] = [a, b, c];
+//   for (var i = 3; i < n; i++) {
+//     result[i] = result[i - 1] + result[i - 2] + result[i - 3];
+//   }
+//   return result;
+// }
+//  ***************************************************************************
+// 57 Завершіть функцію, щоб вона знайшла середнє значення трьох переданих їй балів і повернула літерне значення, пов’язане з цією оцінкою.
+function getGrade(a, b, c) {
+    let average = (a + b + c) / 3;
+    if (average >= 90 && average <= 100)
+        return 'A';
+    if (average >= 80 && average < 90)
+        return "B";
+    if (average >= 70 && average < 80)
+        return "C";
+    if (average >= 60 && average < 70)
+        return "D";
+    return 'F';
+}
+// console.log(getGrade(44, 55, 52));
+//  ***************************************************************************
+// 58
+function rentalCarCost(d) {
+    let cost = d * 40;
+    if (d >= 7)
+        return cost - 50;
+    if (d >= 3 && d < 7)
+        return cost - 20;
+    return cost;
+}
+console.log(rentalCarCost(7));
 //# sourceMappingURL=index.js.map

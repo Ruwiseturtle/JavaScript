@@ -913,7 +913,46 @@ function tribonacci([a, b, c]: [number, number, number], n: number): number[]{
   
 // console.log(tribonacci([0.5, 0.5, 0.5], 30));
 
+
+// export function tribonacci(
+//   [a, b, c]: [number, number, number],
+//   n: number
+// ): number[] {
+//   if (n == 0) return [];
+//   if (n == 1) return [a];
+//   if (n == 2) return [a, b];
+//   if (n == 3) return [a, b, c];
+//   var result: number[] = [a, b, c];
+//   for (var i = 3; i < n; i++) {
+//     result[i] = result[i - 1] + result[i - 2] + result[i - 3];
+//   }
+//   return result;
+// }
 //  ***************************************************************************
-// 57
+// 57 Завершіть функцію, щоб вона знайшла середнє значення трьох переданих їй балів і повернула літерне значення, пов’язане з цією оцінкою.
 
+function getGrade(a: number, b: number, c: number): string{
+  let average = (a + b + c) / 3;
 
+  if (average >= 90 && average <= 100) return 'A'
+  if (average >= 80 && average < 90) return "B";
+  if (average >= 70 && average < 80) return "C";
+  if (average >= 60 && average < 70) return "D";
+
+  return 'F'
+}
+
+// console.log(getGrade(44, 55, 52));
+
+//  ***************************************************************************
+// 58
+
+function rentalCarCost(d: number): number{
+  let cost = d * 40;
+
+  if (d >= 7) return cost - 50;
+  if (d >= 3 && d < 7) return cost - 20;
+  return cost
+}
+
+console.log(rentalCarCost(7));
