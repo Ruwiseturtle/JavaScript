@@ -1106,4 +1106,54 @@ export const findOdd = (xs: number[]): number => {
   // return xs.reduce((a, b) => a ^ b);
 }
 
-console.log(findOdd([20, 1, -1, 2, -2, 3, 3, 5, 5, 1, 2, 4, 20, 4, -1, -2, 5]));
+// console.log(findOdd([20, 1, -1, 2, -2, 3, 3, 5, 5, 1, 2, 4, 20, 4, -1, -2, 5]));
+
+//  ***************************************************************************
+// 67
+
+function isTriangle(a: number, b: number, c: number): boolean{
+  if ((a + b > c) && (a + c > b) && (b + c > a)) {
+    return true
+    // return a + b > c && a + c > b && b + c > a;
+  }
+  
+  return false
+}
+
+// console.log(isTriangle(-5, 1, 3));
+
+//  ***************************************************************************
+// 68
+
+function findNeddle(haystack: any[]): string{
+  let pos = haystack.reduce((acum, item, index) => {
+    if (item === 'needle') { 
+      acum = index
+    } 
+    return acum
+  } ,0)
+
+  console.log(pos);
+  
+  return `found the needle at position ${pos}`;
+}
+
+// export function findNeedle(haystack: any[]): string {
+//   return "found the needle at position " + haystack.indexOf("needle");
+// }
+
+// console.log(
+//   findNeddle(["hay", "junk", "hay", "hay", "moreJunk", "needle", "randomJunk"])
+// );
+
+//  ***************************************************************************
+// 69
+
+function positiveSum(arr: number[]): number{
+  return arr.reduce((acum, item) => item > 0? acum + item: acum ,0)
+}
+
+// console.log(positiveSum([1, -4, 7, 12]));
+
+//  ***************************************************************************
+// 70
