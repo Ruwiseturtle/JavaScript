@@ -808,19 +808,24 @@ function isPalindrome(x) {
 function wave(str) {
     let arr = [];
     for (let i = 0; i < str.length; i++) {
+        if (str[i] == " ")
+            continue;
         let a = [...str.toLowerCase()];
-        if (str[i] == " ") {
-            arr.push(str.toLowerCase());
-        }
-        else {
-            a[i] = a[i].toUpperCase();
-            let strNew = a.join("");
-            arr.push(strNew);
-        }
+        a[i] = a[i].toUpperCase();
+        let strNew = a.join("");
+        arr.push(strNew);
     }
     return arr;
 }
-console.log(wave("Two words"));
-["Two words", "tWo words", "twO words", "two words", "two Words", "two wOrds", "two woRds", "two worDs", "two wordS",];
-["Two words", "tWo words", "twO words", "two Words", "two wOrds", "two woRds", "two worDs", "two wordS",];
+// console.log(wave("Two words"));
+//  ***************************************************************************
+// 64
+function countSleep(num) {
+    let str = '';
+    for (let i = 0; i < num; i++) {
+        str = str + `${i + 1} sheep...`;
+    }
+    return str;
+}
+console.log(countSleep(7));
 //# sourceMappingURL=index.js.map

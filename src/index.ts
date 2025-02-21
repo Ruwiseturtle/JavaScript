@@ -1072,3 +1072,23 @@ function wave(str: string): Array<String>{
 
 //  ***************************************************************************
 // 64
+
+function countSleep(num: number): string{
+  let str = ''
+  for (let i = 0; i < num; i++){
+    str = str + `${i+1} sheep...`
+  }
+  return str;
+}
+
+// function countSleep(num: number): string {
+//   return Array.from({ length: num }, (_, i) => `${i + 1} sheep...`).join("");
+// }
+
+// console.log(countSleep(7));
+
+
+//  ***************************************************************************
+// 65
+
+export const square = (n: number): number => n * n;
