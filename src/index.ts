@@ -1092,3 +1092,18 @@ function countSleep(num: number): string{
 // 65
 
 export const square = (n: number): number => n * n;
+
+//  ***************************************************************************
+// 66
+
+export const findOdd = (xs: number[]): number => {
+  let result = 0;
+
+  xs.forEach(num => {
+    result = result ^ num;
+  })
+  return result
+  // return xs.reduce((a, b) => a ^ b);
+}
+
+console.log(findOdd([20, 1, -1, 2, -2, 3, 3, 5, 5, 1, 2, 4, 20, 4, -1, -2, 5]));

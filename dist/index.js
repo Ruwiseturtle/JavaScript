@@ -1,7 +1,7 @@
 "use strict";
 // import { test } from "./test";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.likes = exports.G964 = void 0;
+exports.findOdd = exports.square = exports.likes = exports.G964 = void 0;
 // const button = document.querySelector("button")!;
 // const input = document.querySelector("input")!;
 // if (button && input) {
@@ -827,5 +827,23 @@ function countSleep(num) {
     }
     return str;
 }
-console.log(countSleep(7));
+// function countSleep(num: number): string {
+//   return Array.from({ length: num }, (_, i) => `${i + 1} sheep...`).join("");
+// }
+// console.log(countSleep(7));
+//  ***************************************************************************
+// 65
+const square = (n) => n * n;
+exports.square = square;
+//  ***************************************************************************
+// 66
+const findOdd = (xs) => {
+    let result = 0;
+    xs.forEach(num => {
+        result = result ^ num;
+    });
+    return result;
+};
+exports.findOdd = findOdd;
+console.log((0, exports.findOdd)([20, 1, -1, 2, -2, 3, 3, 5, 5, 1, 2, 4, 20, 4, -1, -2, 5]));
 //# sourceMappingURL=index.js.map
