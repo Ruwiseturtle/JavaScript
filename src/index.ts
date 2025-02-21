@@ -1054,3 +1054,21 @@ function isPalindrome(x: string): boolean{
 //  ***************************************************************************
 // 63
 
+function wave(str: string): Array<String>{
+  let arr = [];
+  
+  for (let i = 0; i < str.length; i++){
+    if (str[i] == " ") continue;
+
+    let a = [...str.toLowerCase()];
+    a[i] = a[i].toUpperCase();
+    let strNew = a.join("");
+    arr.push(strNew);   
+  }  
+  return arr;
+}
+
+// console.log(wave("Two words"));
+
+//  ***************************************************************************
+// 64

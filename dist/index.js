@@ -791,14 +791,36 @@ function countPositivesSumNegatives(input) {
 //  ***************************************************************************
 // 62
 function isPalindrome(x) {
+    if (x.length === 1)
+        return true;
     let lengthOfHalfStr = Math.trunc(x.length / 2);
     let halfStr1 = x.toLowerCase().slice(0, lengthOfHalfStr);
     let halfStr2 = x.toLowerCase().slice(-lengthOfHalfStr).split('').reverse().join('');
-    console.log(lengthOfHalfStr);
-    console.log(halfStr1);
-    console.log(halfStr2);
     return halfStr1 === halfStr2 ? true : false;
 }
-console.log(isPalindrome("madam"));
-console.log(isPalindrome("abba"));
+// export function isPalindrome(x: string): boolean {
+//   return x.toLowerCase().split("").reverse().join("") == x.toLowerCase();
+// } !!!!!!!!!!!!!!!!!!!!!!!!!!
+// console.log(isPalindrome("madam"));
+// console.log(isPalindrome("abba"));
+//  ***************************************************************************
+// 63
+function wave(str) {
+    let arr = [];
+    for (let i = 0; i < str.length; i++) {
+        let a = [...str.toLowerCase()];
+        if (str[i] == " ") {
+            arr.push(str.toLowerCase());
+        }
+        else {
+            a[i] = a[i].toUpperCase();
+            let strNew = a.join("");
+            arr.push(strNew);
+        }
+    }
+    return arr;
+}
+console.log(wave("Two words"));
+["Two words", "tWo words", "twO words", "two words", "two Words", "two wOrds", "two woRds", "two worDs", "two wordS",];
+["Two words", "tWo words", "twO words", "two Words", "two wOrds", "two woRds", "two worDs", "two wordS",];
 //# sourceMappingURL=index.js.map
