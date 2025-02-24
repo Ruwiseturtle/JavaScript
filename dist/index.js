@@ -1,7 +1,8 @@
 "use strict";
 // import { test } from "./test";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.findOdd = exports.square = exports.likes = exports.G964 = void 0;
+exports.max = exports.min = exports.maleNegative = exports.booleanToString = exports.findOdd = exports.square = exports.likes = exports.G964 = void 0;
+exports.SeriesSum = SeriesSum;
 // const button = document.querySelector("button")!;
 // const input = document.querySelector("input")!;
 // if (button && input) {
@@ -880,5 +881,54 @@ function findNeddle(haystack) {
 function positiveSum(arr) {
     return arr.reduce((acum, item) => item > 0 ? acum + item : acum, 0);
 }
-console.log(positiveSum([1, -4, 7, 12]));
+// console.log(positiveSum([1, -4, 7, 12]));
+//  ***************************************************************************
+// 70
+function number1(array) {
+    return array.map((item, index) => `${index + 1}: ${item}`);
+}
+// console.log(number1(["a", "b", "c"]));
+//  ***************************************************************************
+// 71
+const booleanToString = (b) => {
+    return b.toString();
+};
+exports.booleanToString = booleanToString;
+// console.log(booleanToString(true));
+//  ***************************************************************************
+// 72
+function SeriesSum(n) {
+    let denominator = 1;
+    let sum = 0;
+    for (let i = 1; i <= n; i++) {
+        sum = sum + 1 / denominator;
+        console.log(`1/${denominator}`);
+        denominator += 3;
+    }
+    return sum.toFixed(2);
+}
+// SeriesSum(5);
+//  ***************************************************************************
+// 73
+const maleNegative = (num) => {
+    if (num === 0)
+        return 0;
+    if (num > 0)
+        return num * (-1);
+    return num;
+};
+exports.maleNegative = maleNegative;
+// console.log(maleNegative(-5));
+//  ***************************************************************************
+// 74
+const min = (list) => {
+    return Math.min(...list);
+};
+exports.min = min;
+const max = (list) => {
+    return Math.max(...list);
+};
+exports.max = max;
+console.log((0, exports.min)([4, 6, 2, 1, 9, 63, -134, 566]));
+console.log((0, exports.max)([4, 6, 2, 1, 9, 63, -134, 566]));
 //# sourceMappingURL=index.js.map

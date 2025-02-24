@@ -1157,3 +1157,63 @@ function positiveSum(arr: number[]): number{
 
 //  ***************************************************************************
 // 70
+
+function number1(array: string[]): string[]{
+  return array.map((item, index)=> `${index+1}: ${item}`)
+}
+
+// console.log(number1(["a", "b", "c"]));
+
+//  ***************************************************************************
+// 71
+
+export const booleanToString = (b: boolean): string => {
+  return b.toString();
+}
+
+// console.log(booleanToString(true));
+
+
+//  ***************************************************************************
+// 72
+
+export function SeriesSum(n: number): string{
+  let denominator = 1;
+  let sum = 0;
+
+  for (let i = 1; i <= n; i++){
+    sum = sum + 1 / denominator;
+    console.log(`1/${denominator}`);
+    denominator += 3;    
+  }
+  
+  return sum.toFixed(2);
+}
+
+// SeriesSum(5);
+
+//  ***************************************************************************
+// 73
+
+export const maleNegative = (num: number): number =>{
+  if (num === 0) return 0;
+  if (num > 0) return num * (-1);
+  
+  return num
+}
+
+// console.log(maleNegative(-5));
+
+//  ***************************************************************************
+// 74
+
+export const min = (list: number[]): number => {
+  return Math.min(...list);
+}
+
+export const max = (list: number[]): number => {
+  return Math.max(...list);
+};
+
+console.log(min([4, 6, 2, 1, 9, 63, -134, 566]));
+console.log(max([4, 6, 2, 1, 9, 63, -134, 566]));
