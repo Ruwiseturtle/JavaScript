@@ -1215,5 +1215,104 @@ export const max = (list: number[]): number => {
   return Math.max(...list);
 };
 
-console.log(min([4, 6, 2, 1, 9, 63, -134, 566]));
-console.log(max([4, 6, 2, 1, 9, 63, -134, 566]));
+// console.log(min([4, 6, 2, 1, 9, 63, -134, 566]));
+// console.log(max([4, 6, 2, 1, 9, 63, -134, 566]));
+
+//  ***************************************************************************
+// 75
+
+export function howMuchLoveYou(petals: number): string{
+  let arr = ["I love you","a little","a lot","passionately", "madly", "not at all",];
+
+  let res = '';
+  let ind = 0;
+
+  for (let a = 0; a < petals; a++) {
+   
+    res = arr[ind];
+    ind = ind + 1;
+
+    if (ind === arr.length) {
+      ind = 0;
+    }      
+  }
+  return res
+}
+
+// howMuchLoveYou(9);
+// console.log(howMuchLoveYou(9));
+
+// export function howMuchILoveYou(petals: number): string {
+//   switch ((petals - 1) % 6) {
+//     case 1:
+//       return "a little";
+//     case 2:
+//       return "a lot";
+//     case 3:
+//       return "passionately";
+//     case 4:
+//       return "madly";
+//     case 5:
+//       return "not at all";
+//     default:
+//       return "I love you";
+//   }
+// }
+
+
+//  ***************************************************************************
+// 76
+
+function filter_list(l: Array<any>): Array<number>{
+  return l.filter(item => typeof item === "number")
+}
+
+// console.log(filter_list([1, 2, "a", "b"]));
+
+//  ***************************************************************************
+// 77
+// h - поверх на якому грається дитина
+// bounce - відскок
+function bouncingBall(h: number, bounce: number, window: number): number{
+  if (h <= 0 || bounce <= 0 || bounce >= 1 || window >= h) return -1
+  
+  let times = 1;
+  let height = h;
+
+  while (height*bounce > window) {
+    height = height * bounce;
+    times += 2;
+  }
+
+  return times;
+}
+
+// console.log(bouncingBall(30, 0.66, 1.5));
+
+//  ***************************************************************************
+// 77
+
+function order(words: string): string{
+  let arr = words.split(' ');
+  let sortArr:string[] = [];
+
+  arr.forEach(element => {
+    for (let i = 0; i < element.length; i++){
+      if (!isNaN(Number(element[i]))) {
+        let ind = Number(element[i]);
+        sortArr[ind-1] = element;        
+      }
+      
+    }
+  });  
+  return sortArr.join(' ');
+}
+
+// export function order(words: String): String {
+//   return words
+//     .split(" ")
+//     .sort((a, b) => +a.match(/\d/) - +b.match(/\d/))
+//     .join(" ");
+// }
+
+// console.log(order("is2 Thi1s T4est 3a"));
