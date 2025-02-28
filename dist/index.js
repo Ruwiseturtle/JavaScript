@@ -1,7 +1,7 @@
 "use strict";
 // import { test } from "./test";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.max = exports.min = exports.maleNegative = exports.booleanToString = exports.findOdd = exports.square = exports.likes = exports.G964 = void 0;
+exports.high = exports.max = exports.min = exports.maleNegative = exports.booleanToString = exports.findOdd = exports.square = exports.likes = exports.G964 = void 0;
 exports.SeriesSum = SeriesSum;
 exports.howMuchLoveYou = howMuchLoveYou;
 // const button = document.querySelector("button")!;
@@ -1002,5 +1002,43 @@ function order(words) {
     });
     return sortArr.join(' ');
 }
-console.log(order("is2 Thi1s T4est 3a"));
+// export function order(words: String): String {
+//   return words
+//     .split(" ")
+//     .sort((a, b) => +a.match(/\d/) - +b.match(/\d/))
+//     .join(" ");
+// }
+// console.log(order("is2 Thi1s T4est 3a"));
+//  ***************************************************************************
+// 78
+const high = (str) => {
+    let arrStr = str.split(' ');
+    let indexWord = 0;
+    let max = 0;
+    arrStr.forEach((element, index) => {
+        let weightWord = [...element].reduce((acum, letter) => acum + (letter.toLowerCase().charCodeAt(0) - 'a'.charCodeAt(0) + 1), 0);
+        if (weightWord > max) {
+            max = weightWord;
+            indexWord = index;
+        }
+    });
+    return arrStr[indexWord];
+};
+exports.high = high;
+// console.log(high("man i need a taxi up to ubud"));
+//  ***************************************************************************
+// 79
+function highAndLow(numbers) {
+    let arrNumbers = numbers.split(' ');
+    let min = Number(arrNumbers[0]);
+    let max = Number(arrNumbers[0]);
+    arrNumbers.forEach(element => {
+        if (Number(element) < min)
+            min = Number(element);
+        if (Number(element) > max)
+            max = Number(element);
+    });
+    return max.toString() + " " + min.toString();
+}
+console.log(highAndLow("1 2 3 4 5"));
 //# sourceMappingURL=index.js.map

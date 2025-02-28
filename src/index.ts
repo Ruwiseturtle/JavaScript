@@ -1316,3 +1316,44 @@ function order(words: string): string{
 // }
 
 // console.log(order("is2 Thi1s T4est 3a"));
+
+//  ***************************************************************************
+// 78
+
+export const high = (str: string): string => {
+  let arrStr = str.split(' ');
+  let indexWord = 0;
+  let max = 0;
+  
+  arrStr.forEach((element, index) => {
+    let weightWord = [...element].reduce((acum, letter) => acum + (letter.toLowerCase().charCodeAt(0) - 'a'.charCodeAt(0)+1),0)
+    if (weightWord > max) {
+      max = weightWord;
+      indexWord = index;
+    }
+  });
+
+  return arrStr[indexWord];
+}
+
+// console.log(high("man i need a taxi up to ubud"));
+
+//  ***************************************************************************
+// 79
+
+function highAndLow(numbers: string): string{
+  let arrNumbers = numbers.split(' ');
+  let min = Number(arrNumbers[0]);
+  let max = Number(arrNumbers[0]);
+
+  arrNumbers.forEach(element => {
+    if (Number(element) < min) min = Number(element);
+    if (Number(element) > max) max = Number(element);
+  });
+
+  //  let min = Math.min(...arrNumbers);
+  //  let max = Math.max(...arrNumbers);
+  return max.toString() + " " + min.toString();
+}
+
+console.log(highAndLow("1 2 3 4 5"));
