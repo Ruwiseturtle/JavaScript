@@ -1,9 +1,10 @@
 "use strict";
 // import { test } from "./test";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.high = exports.max = exports.min = exports.maleNegative = exports.booleanToString = exports.findOdd = exports.square = exports.likes = exports.G964 = void 0;
+exports.check = exports.nbYear = exports.high = exports.max = exports.min = exports.maleNegative = exports.booleanToString = exports.findOdd = exports.square = exports.likes = exports.G964 = void 0;
 exports.SeriesSum = SeriesSum;
 exports.howMuchLoveYou = howMuchLoveYou;
+exports.isUpperCase = isUpperCase;
 // const button = document.querySelector("button")!;
 // const input = document.querySelector("input")!;
 // if (button && input) {
@@ -1038,7 +1039,40 @@ function highAndLow(numbers) {
         if (Number(element) > max)
             max = Number(element);
     });
+    //  let min = Math.min(...arrNumbers);
+    //  let max = Math.max(...arrNumbers);
     return max.toString() + " " + min.toString();
 }
-console.log(highAndLow("1 2 3 4 5"));
+// console.log(highAndLow("1 2 3 4 5"));
+//  ***************************************************************************
+// 80
+//p0 - початкова кількість населення в місті.
+//percent - відсоток приросту населення щороку (наприклад, якщо percent = 2, це означає +2% на рік).
+//aug - кількість нових жителів, які прибувають або залишають місто щороку (може бути додатним або від’ємним числом).
+//p (number) – цільова кількість населення, яку потрібно досягти або перевищити.
+const nbYear = (p0, percent, aug, p) => {
+    let year = 0;
+    while (p0 < p) {
+        p0 = Math.floor(p0 + p0 * (percent * 0.01) + aug);
+        year += 1;
+    }
+    return year;
+};
+exports.nbYear = nbYear;
+// console.log(nbYear(1500, 5, 100, 5000));
+//  ***************************************************************************
+// 81
+function isUpperCase(str) {
+    let strNew = str.split(' ').join('');
+    return [...strNew].every((letter) => letter.charCodeAt(0) >= 65 && letter.charCodeAt(0) <= 90);
+    // return str === str.toUpperCase();
+}
+// console.log(isUpperCase("HELLO I AM DONALD"));
+//  ***************************************************************************
+// 82
+const check = (a, x) => {
+    return a.includes(x);
+};
+exports.check = check;
+console.log((0, exports.check)([66, 101], '66'));
 //# sourceMappingURL=index.js.map

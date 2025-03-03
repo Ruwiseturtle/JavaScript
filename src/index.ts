@@ -1356,4 +1356,44 @@ function highAndLow(numbers: string): string{
   return max.toString() + " " + min.toString();
 }
 
-console.log(highAndLow("1 2 3 4 5"));
+// console.log(highAndLow("1 2 3 4 5"));
+
+//  ***************************************************************************
+// 80
+//p0 - початкова кількість населення в місті.
+//percent - відсоток приросту населення щороку (наприклад, якщо percent = 2, це означає +2% на рік).
+//aug - кількість нових жителів, які прибувають або залишають місто щороку (може бути додатним або від’ємним числом).
+//p (number) – цільова кількість населення, яку потрібно досягти або перевищити.
+export const nbYear = (p0: number, percent: number, aug: number, p: number): number => {
+  let year = 0
+
+  while (p0 < p) {
+    p0 = Math.floor(p0 + p0 * (percent*0.01) + aug);
+    year += 1;
+  }
+
+  
+  return year;
+}
+
+// console.log(nbYear(1500, 5, 100, 5000));
+
+//  ***************************************************************************
+// 81
+
+export function isUpperCase(str: string) {
+  let strNew = str.split(' ').join('')
+  return [...strNew].every((letter) => letter.charCodeAt(0) >= 65 && letter.charCodeAt(0) <= 90);
+  // return str === str.toUpperCase();
+}
+
+// console.log(isUpperCase("HELLO I AM DONALD"));
+
+//  ***************************************************************************
+// 82
+
+export const check = (a: (number | string)[], x: number | string): boolean => {
+  return a.includes(x);
+}
+
+// console.log(check([66, 101], '66'));
