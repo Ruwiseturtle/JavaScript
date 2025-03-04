@@ -1419,3 +1419,42 @@ export function firstNonConsecutive(arr: number[]): null | number{
 
 // console.log(firstNonConsecutive([1, 2, 3, 4, 5, 6, 8]));
 
+//  ***************************************************************************
+// 85
+
+export function solution2(nums: number[]): number[]{
+  return nums.length === 0 ? [] : nums.sort((a, b) => a - b);
+  // return nums ? nums.sort((a, b) => a - b) : [];
+}
+
+// console.log(solution2([1, 2, 10, 50, 5]));
+
+//  ***************************************************************************
+// 86
+
+export function alphabetPosition(text: string): string{
+
+ return  [...text.toLowerCase()].map(letter => {
+    return (letter.charCodeAt(0) >= 97 && letter.charCodeAt(0) <= 122) ||
+           (letter.charCodeAt(0) >= 65 && letter.charCodeAt(0) <= 90)
+      ? letter.charCodeAt(0) - 96
+      : null;
+  }).filter(Boolean).join(' ');
+
+}
+
+// console.log(alphabetPosition("The sunset sets at twelve o' clock."));
+
+//  ***************************************************************************
+// 87
+
+export function getChar(c: number): string{
+  return String.fromCharCode(c).toString();
+}
+
+// console.log(getChar(59));
+
+//  ***************************************************************************
+// 88
+
+

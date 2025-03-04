@@ -7,6 +7,9 @@ exports.howMuchLoveYou = howMuchLoveYou;
 exports.isUpperCase = isUpperCase;
 exports.twoSort = twoSort;
 exports.firstNonConsecutive = firstNonConsecutive;
+exports.solution2 = solution2;
+exports.alphabetPosition = alphabetPosition;
+exports.getChar = getChar;
 // const button = document.querySelector("button")!;
 // const input = document.querySelector("input")!;
 // if (button && input) {
@@ -1087,7 +1090,32 @@ function twoSort(s) {
 //  ***************************************************************************
 // 84
 function firstNonConsecutive(arr) {
-    return arr.find((item, i) => i > 0 && item !== arr[i - 1] + 1) || null;
+    let result = arr.find((item, i) => i > 0 && item !== arr[i - 1] + 1);
+    return result === undefined ? null : result;
 }
-console.log(firstNonConsecutive([1, 2, 3, 4, 5, 6, 8]));
+// console.log(firstNonConsecutive([1, 2, 3, 4, 5, 6, 8]));
+//  ***************************************************************************
+// 85
+function solution2(nums) {
+    return nums.length === 0 ? [] : nums.sort((a, b) => a - b);
+    // return nums ? nums.sort((a, b) => a - b) : [];
+}
+// console.log(solution2([1, 2, 10, 50, 5]));
+//  ***************************************************************************
+// 86
+function alphabetPosition(text) {
+    return [...text.toLowerCase()].map(letter => {
+        return (letter.charCodeAt(0) >= 97 && letter.charCodeAt(0) <= 122) ||
+            (letter.charCodeAt(0) >= 65 && letter.charCodeAt(0) <= 90)
+            ? letter.charCodeAt(0) - 96
+            : null;
+    }).filter(Boolean).join(' ');
+}
+// console.log(alphabetPosition("The sunset sets at twelve o' clock."));
+//  ***************************************************************************
+// 87
+function getChar(c) {
+    return String.fromCharCode(c).toString();
+}
+console.log(getChar(59));
 //# sourceMappingURL=index.js.map
