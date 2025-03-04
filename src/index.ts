@@ -1457,4 +1457,41 @@ export function getChar(c: number): string{
 //  ***************************************************************************
 // 88
 
+export function between(a: number, b: number): number[]{
+  let arr = []
+  for (let i = a; i <= b; i++) {
+    arr.push(i);    
+  }
+  return arr;
+}
+
+// console.log(between(3, 7));
+
+//  ***************************************************************************
+// 89
+
+export function correct(s: string): string{
+  let arrSet: Record<string, string> = {
+    '5': 'S',
+    '1': 'I',
+    '0': 'O'
+  }
+console.log(!isNaN(Number(' ')));
+
+  return [...s].map(char =>  arrSet[char] || char).join('');
+}
+
+// correct('L0ND0N');
+
+//  ***************************************************************************
+// 90
+
+export function position(alphabet: string): string{
+  return (alphabet.toUpperCase().charCodeAt(0) - 'A'.charCodeAt(0) + 1).toString();
+}
+
+// console.log(position('z'));
+
+//  ***************************************************************************
+// 91
 
