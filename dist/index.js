@@ -5,6 +5,8 @@ exports.check = exports.nbYear = exports.high = exports.max = exports.min = expo
 exports.SeriesSum = SeriesSum;
 exports.howMuchLoveYou = howMuchLoveYou;
 exports.isUpperCase = isUpperCase;
+exports.twoSort = twoSort;
+exports.firstNonConsecutive = firstNonConsecutive;
 // const button = document.querySelector("button")!;
 // const input = document.querySelector("input")!;
 // if (button && input) {
@@ -1074,5 +1076,18 @@ const check = (a, x) => {
     return a.includes(x);
 };
 exports.check = check;
-console.log((0, exports.check)([66, 101], '66'));
+// console.log(check([66, 101], '66'));
+//  ***************************************************************************
+// 83
+function twoSort(s) {
+    let newArr = s.sort();
+    return newArr[0].split("").join("***");
+}
+// console.log(twoSort(['xsxsa','sdasd','xzcv','werh']));
+//  ***************************************************************************
+// 84
+function firstNonConsecutive(arr) {
+    return arr.find((item, i) => i > 0 && item !== arr[i - 1] + 1) || null;
+}
+console.log(firstNonConsecutive([1, 2, 3, 4, 5, 6, 8]));
 //# sourceMappingURL=index.js.map

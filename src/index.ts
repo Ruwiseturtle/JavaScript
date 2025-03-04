@@ -1397,3 +1397,25 @@ export const check = (a: (number | string)[], x: number | string): boolean => {
 }
 
 // console.log(check([66, 101], '66'));
+
+//  ***************************************************************************
+// 83
+
+export function twoSort(s: string[]): string{
+  let newArr = s.sort();
+  return newArr[0].split("").join("***");
+}
+
+// console.log(twoSort(['xsxsa','sdasd','xzcv','werh']));
+
+//  ***************************************************************************
+// 84
+
+export function firstNonConsecutive(arr: number[]): null | number{
+  let result = arr.find((item, i) => i > 0 && item !== arr[i - 1] + 1);
+  return result === undefined ? null : result;
+ 
+}
+
+// console.log(firstNonConsecutive([1, 2, 3, 4, 5, 6, 8]));
+
