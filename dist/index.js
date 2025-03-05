@@ -13,6 +13,8 @@ exports.getChar = getChar;
 exports.between = between;
 exports.correct = correct;
 exports.position = position;
+exports.invert = invert;
+exports.finalGrade = finalGrade;
 // const button = document.querySelector("button")!;
 // const input = document.querySelector("input")!;
 // if (button && input) {
@@ -1148,5 +1150,21 @@ function correct(s) {
 function position(alphabet) {
     return (alphabet.toUpperCase().charCodeAt(0) - 'A'.charCodeAt(0) + 1).toString();
 }
-console.log(position('z'));
+// console.log(position('z'));
+//  ***************************************************************************
+// 91
+function invert(array) {
+    return array.map(item => item * (-1));
+}
+// console.log(invert([1, 2, 3, 4, 5]));
+function finalGrade(exam, projects) {
+    if (exam > 90 || projects > 10)
+        return 100;
+    if (exam > 75 || projects >= 5)
+        return 90;
+    if (exam > 50 || projects >= 2)
+        return 75;
+    return 0;
+}
+console.log(finalGrade(64, 1));
 //# sourceMappingURL=index.js.map
