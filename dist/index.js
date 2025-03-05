@@ -15,6 +15,10 @@ exports.correct = correct;
 exports.position = position;
 exports.invert = invert;
 exports.finalGrade = finalGrade;
+exports.sumDigits = sumDigits;
+exports.getMiddle = getMiddle;
+exports.solve = solve;
+exports.descendingOrder = descendingOrder;
 // const button = document.querySelector("button")!;
 // const input = document.querySelector("input")!;
 // if (button && input) {
@@ -1157,14 +1161,61 @@ function invert(array) {
     return array.map(item => item * (-1));
 }
 // console.log(invert([1, 2, 3, 4, 5]));
+//  ***************************************************************************
+// 92
 function finalGrade(exam, projects) {
     if (exam > 90 || projects > 10)
         return 100;
-    if (exam > 75 || projects >= 5)
+    if (exam > 75 && projects >= 5)
         return 90;
-    if (exam > 50 || projects >= 2)
+    if (exam > 50 && projects >= 2)
         return 75;
     return 0;
 }
-console.log(finalGrade(64, 1));
+// console.log(finalGrade(64, 1));
+//  ***************************************************************************
+// 93
+function sumDigits(n) {
+    return Number([...Math.abs(n).toString()].reduce((acum, item) => acum + Number(item), 0));
+}
+// console.log(sumDigits(-32));
+//  ***************************************************************************
+// 94
+function getMiddle(s) {
+    return s.length % 2 === 0 ? `${s[(s.length / 2) - 1]}${s[s.length / 2]}` : `${s[(s.length - 1) / 2]}`;
+}
+// getMiddle("testx")
+//  ***************************************************************************
+// 95
+// a >= 97 && a <= 122 маленькі
+// a >= 65 && a <= 90  великі
+function solve(s) {
+    let smallLetters = 0;
+    let bigLetters = 0;
+    s.split('').forEach(letter => {
+        if (letter.charCodeAt(0) >= 97 && letter.charCodeAt(0) <= 122)
+            smallLetters += 1;
+        if (letter.charCodeAt(0) >= 65 && letter.charCodeAt(0) <= 90)
+            bigLetters += 1;
+    });
+    if (smallLetters === bigLetters)
+        return s.toLowerCase();
+    if (smallLetters > bigLetters)
+        return s.toLowerCase();
+    return s.toUpperCase();
+}
+// console.log(solve("CODe"));
+//  ***************************************************************************
+// 96
+function descendingOrder(n) {
+    let res = Number(n
+        .toString()
+        .split("")
+        .map(Number)
+        .sort((a, b) => b - a)
+        .join(''));
+    console.log(res);
+    return 0;
+}
+descendingOrder(987654321);
 //# sourceMappingURL=index.js.map

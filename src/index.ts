@@ -1501,6 +1501,9 @@ export function invert(array: number[]): number[]{
 
 // console.log(invert([1, 2, 3, 4, 5]));
 
+//  ***************************************************************************
+// 92
+
 export function finalGrade(exam: number, projects: number): number{
   if (exam > 90 || projects > 10) return 100;
   if (exam > 75 && projects >= 5) return 90;
@@ -1509,3 +1512,62 @@ export function finalGrade(exam: number, projects: number): number{
 }
 
 // console.log(finalGrade(64, 1));
+
+//  ***************************************************************************
+// 93
+
+export function sumDigits(n: number): number{
+  return Number([...Math.abs(n).toString()].reduce((acum, item) => acum + Number(item),0))
+}
+
+// console.log(sumDigits(-32));
+
+//  ***************************************************************************
+// 94
+
+export function getMiddle(s: string) {
+ return s.length % 2 === 0 ? `${s[(s.length / 2) - 1]}${s[s.length / 2]}` : `${s[(s.length-1) / 2]}`;
+}
+
+// getMiddle("testx")
+
+//  ***************************************************************************
+// 95
+
+// a >= 97 && a <= 122 маленькі
+// a >= 65 && a <= 90  великі
+
+export function solve(s: string): string{
+  let smallLetters = 0;
+  let bigLetters = 0;
+
+  s.split('').forEach(letter => {
+    if (letter.charCodeAt(0) >= 97 && letter.charCodeAt(0) <= 122) smallLetters += 1;
+    if (letter.charCodeAt(0) >= 65 && letter.charCodeAt(0) <= 90) bigLetters += 1;     
+  });
+
+  if (smallLetters === bigLetters) return s.toLowerCase();
+  if (smallLetters > bigLetters) return s.toLowerCase();
+
+   return s.toUpperCase();
+}
+
+// console.log(solve("CODe"));
+
+//  ***************************************************************************
+// 96
+
+export function descendingOrder(n: number): number{
+ return Number(n
+    .toString()
+    .split("")
+    .map(Number)
+    .sort((a, b) => b - a)
+    .join(''));
+
+}
+
+// descendingOrder(987654321);
+
+//  ***************************************************************************
+// 97
