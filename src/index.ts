@@ -1571,3 +1571,66 @@ export function descendingOrder(n: number): number{
 
 //  ***************************************************************************
 // 97
+
+export function peopleWithAgeDrink(old: number): string{
+  if (old < 14) return "drink toddy";
+  if (old < 18) return "drink coke";
+  if (old < 21) return "drink beer";
+  return "drink whisky";
+}
+
+//  ***************************************************************************
+// 98
+// principal - сума грошей
+// interest - відсотки, які щорічно виплачуються
+// tax - податки за рік (оподатковуються річні нараховані відсотки)
+// desired - бажана сума грошей
+
+export function calculateYears(principal: number, interest: number, tax: number, desired: number): number {
+  let year = 0;
+
+  while (principal < desired) {
+    let profit = principal * interest;
+    let tax1 = profit * tax;
+    principal = principal + (profit - tax1);
+    year += 1;    
+  }
+  return year;
+}
+
+// calculateYears(1000, 0.01625, 0.18, 1200)
+
+//  ***************************************************************************
+// 99
+
+export function hello(name = ''): string {
+  return `Hello, ${name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()}!`;
+  // return name
+  //   ? `Hello, ${name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()}!`
+  //   : "Hello, World!";
+}
+
+// console.log(hello('johN'));
+
+//  ***************************************************************************
+// 100
+
+// a >= 97 && a <= 122 маленькі
+// a >= 65 && a <= 90  великі
+
+export function capitals(word: string): number[]{
+  return [...word].map((a, index) => a.charCodeAt(0) >= 65 && a.charCodeAt(0) <= 90 ?  index : null    
+  ).filter((item): item is number => item !== null)
+}
+
+// capitals("CodEWaRs");
+
+//  ***************************************************************************
+// 101
+
+export function reverseList(list: number[]): number[]{
+  
+  return list.reverse()
+}
+
+console.log(reverseList([1, 2, 3, 4]));

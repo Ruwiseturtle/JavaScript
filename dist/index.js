@@ -19,6 +19,11 @@ exports.sumDigits = sumDigits;
 exports.getMiddle = getMiddle;
 exports.solve = solve;
 exports.descendingOrder = descendingOrder;
+exports.peopleWithAgeDrink = peopleWithAgeDrink;
+exports.calculateYears = calculateYears;
+exports.hello = hello;
+exports.capitals = capitals;
+exports.reverseList = reverseList;
 // const button = document.querySelector("button")!;
 // const input = document.querySelector("input")!;
 // if (button && input) {
@@ -1208,14 +1213,63 @@ function solve(s) {
 //  ***************************************************************************
 // 96
 function descendingOrder(n) {
-    let res = Number(n
+    return Number(n
         .toString()
         .split("")
         .map(Number)
         .sort((a, b) => b - a)
         .join(''));
-    console.log(res);
-    return 0;
 }
-descendingOrder(987654321);
+// descendingOrder(987654321);
+//  ***************************************************************************
+// 97
+function peopleWithAgeDrink(old) {
+    if (old < 14)
+        return "drink toddy";
+    if (old < 18)
+        return "drink coke";
+    if (old < 21)
+        return "drink beer";
+    return "drink whisky";
+}
+//  ***************************************************************************
+// 98
+// principal - сума грошей
+// interest - відсотки, які щорічно виплачуються
+// tax - податки за рік (оподатковуються річні нараховані відсотки)
+// desired - бажана сума грошей
+function calculateYears(principal, interest, tax, desired) {
+    let year = 0;
+    while (principal < desired) {
+        let profit = principal * interest;
+        let tax1 = profit * tax;
+        principal = principal + (profit - tax1);
+        year += 1;
+    }
+    return year;
+}
+// calculateYears(1000, 0.01625, 0.18, 1200)
+//  ***************************************************************************
+// 99
+function hello(name = '') {
+    return `Hello, ${name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()}!`;
+    // return name
+    //   ? `Hello, ${name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()}!`
+    //   : "Hello, World!";
+}
+// console.log(hello('johN'));
+//  ***************************************************************************
+// 100
+// a >= 97 && a <= 122 маленькі
+// a >= 65 && a <= 90  великі
+function capitals(word) {
+    return [...word].map((a, index) => a.charCodeAt(0) >= 65 && a.charCodeAt(0) <= 90 ? index : null).filter((item) => item !== null);
+}
+// capitals("CodEWaRs");
+//  ***************************************************************************
+// 101
+function reverseList(list) {
+    return list.reverse();
+}
+console.log(reverseList([1, 2, 3, 4]));
 //# sourceMappingURL=index.js.map
