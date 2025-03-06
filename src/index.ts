@@ -1633,4 +1633,18 @@ export function reverseList(list: number[]): number[]{
   return list.reverse()
 }
 
-console.log(reverseList([1, 2, 3, 4]));
+// console.log(reverseList([1, 2, 3, 4]));
+
+//  ***************************************************************************
+// 102
+
+export function checkExam(array1: string[], array2: string[]): number{
+  let res =  array1.reduce((accum, item, index) => {
+    if (array2[index] === "") return accum;
+    return item === array2[index] ? accum + 4 : accum - 1;
+  }, 0)
+
+  return Math.max(res, 0); // повертаємо більше з двух чисел, бо якщо рез буде 0 , то повертаємо 0
+}
+
+// checkExam(["a", "a", "b", "b"],["a", "c", "b", "d"]);

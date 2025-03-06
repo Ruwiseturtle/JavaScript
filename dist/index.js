@@ -24,6 +24,7 @@ exports.calculateYears = calculateYears;
 exports.hello = hello;
 exports.capitals = capitals;
 exports.reverseList = reverseList;
+exports.checkExam = checkExam;
 // const button = document.querySelector("button")!;
 // const input = document.querySelector("input")!;
 // if (button && input) {
@@ -1271,5 +1272,15 @@ function capitals(word) {
 function reverseList(list) {
     return list.reverse();
 }
-console.log(reverseList([1, 2, 3, 4]));
+// console.log(reverseList([1, 2, 3, 4]));
+//  ***************************************************************************
+// 102
+function checkExam(array1, array2) {
+    return array1.reduce((accum, item, index) => {
+        if (item === '')
+            return accum + 0;
+        return item === array2[index] ? accum + 4 : accum - 1;
+    }, 0);
+}
+// checkExam(["a", "a", "b", "b"],["a", "c", "b", "d"]);
 //# sourceMappingURL=index.js.map
