@@ -27,6 +27,7 @@ exports.reverseList = reverseList;
 exports.checkExam = checkExam;
 exports.warnTheSheep = warnTheSheep;
 exports.dirReduc = dirReduc;
+exports.disemvowel = disemvowel;
 // const button = document.querySelector("button")!;
 // const input = document.querySelector("input")!;
 // if (button && input) {
@@ -1348,5 +1349,28 @@ function dirReduc(arr) {
     }
     return stack;
 }
-console.log(dirReduc(["NORTH", "SOUTH", "EAST", "WEST", "NORTH"]));
+// console.log(dirReduc(["NORTH", "SOUTH", "EAST", "WEST", "NORTH"]));
+// пояснення
+// 1
+// dir = "NORTH"
+// stack порожній → додаємо "NORTH"
+// stack = ["NORTH"];
+// 2
+// dir = "SOUTH"
+// stack[stack.length - 1] = "NORTH"
+// opposites["SOUTH"] = "NORTH"
+// "NORTH" === "NORTH" (співпадає ✅)
+// Видаляємо "NORTH" (stack.pop())
+// stack = [];
+// dir = "EAST"
+// stack порожній → додаємо "EAST"
+// stack = ["EAST"];
+// ......
+//  ***************************************************************************
+// 105
+function disemvowel(str) {
+    const vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
+    return [...str].map(item => vowels.includes(item) ? 'null' : item).filter(item => item !== 'null').join('');
+}
+console.log(disemvowel("This website is for losers LOL!"));
 //# sourceMappingURL=index.js.map

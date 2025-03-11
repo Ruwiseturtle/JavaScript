@@ -1727,7 +1727,7 @@ export function dirReduc(arr: string[]): string[]{
   return stack;
 }
 
-console.log(dirReduc(["NORTH", "SOUTH", "EAST", "WEST", "NORTH"]));
+// console.log(dirReduc(["NORTH", "SOUTH", "EAST", "WEST", "NORTH"]));
 
 // пояснення
 // 1
@@ -1751,3 +1751,13 @@ console.log(dirReduc(["NORTH", "SOUTH", "EAST", "WEST", "NORTH"]));
 
 // stack = ["EAST"];
 // ......
+
+//  ***************************************************************************
+// 105
+
+export function disemvowel(str: string): string{
+  const vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
+  return [...str].map(item => vowels.includes(item) ? 'null' : item).filter(item => item !== 'null').join('')
+}
+
+// console.log(disemvowel("This website is for losers LOL!"));
