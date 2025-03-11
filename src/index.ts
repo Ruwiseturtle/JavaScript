@@ -1648,3 +1648,106 @@ export function checkExam(array1: string[], array2: string[]): number{
 }
 
 // checkExam(["a", "a", "b", "b"],["a", "c", "b", "d"]);
+
+//  ***************************************************************************
+// 103
+
+export function warnTheSheep(queue: string[]): string {
+  if (queue[queue.length - 1] === "wolf")
+    return "Pls go away and stop eating my sheep";
+  let number = queue.reverse().findIndex((item) => item === "wolf");
+  return `Oi! Sheep number ${number}! You are about to be eaten by a wolf!`;
+
+  // const position = queue.reverse().indexOf('wolf');
+  // return position ? `Oi! Sheep number ${position}! You are about to be eaten by a wolf!` : 'Pls go away and stop eating my sheep';
+
+}
+// warnTheSheep(['sheep', 'sheep', 'sheep', 'sheep', 'sheep', 'wolf', 'sheep', 'sheep']);
+
+//  ***************************************************************************
+// 104
+
+// export function dirReduc(arr: string[]): string[]{
+//   let arr1 = [...arr].map(item => item.toUpperCase());
+   
+//   for (let a = 0; a < arr.length; a++){
+    
+//     for (let b = a + 1; b < arr.length; b++){
+//       if (arr1[a] === "NORTH") {
+//         let index = arr1.indexOf("SOUTH");
+//         if (index >= 0) arr1[a] = "null";
+//         index >= 0 ? (arr1[index] = "null") : arr1[index];
+//       } else if (arr1[a] === "SOUTH") {
+//         let index = arr1.indexOf("NORTH");
+//         if (index >= 0) arr1[a] = "null";
+//         index >= 0 ? (arr1[index] = "null") : arr1[index];
+//       } else if (arr1[a] === "EAST") {
+//         let index = arr1.indexOf("WEST");
+//         if (index >= 0) arr1[a] = "null";
+//         index >= 0 ? (arr1[index] = "null") : arr1[index];
+//       } else if (arr1[a] === "WEST") {
+//         let index = arr1.indexOf("EAST");
+//         if (index >= 0) arr1[a] = "null";
+//         index >= 0 ? (arr1[index] = "null") : arr1[index];
+//       }
+//     }
+//   }
+
+//   arr1 = arr1.filter((item) => item !== "null");
+//   console.log(arr1);
+  
+//   return arr1;
+// }
+
+// dirReduc(["NORTH", "SOUTH", "EAST", "WEST", "NORTH"]);
+
+//  ***************************************************************************
+// 104
+
+export function dirReduc(arr: string[]): string[]{
+  const stack: string[] = [];
+
+  const opposites: Record<string, string> = {
+    NORTH: "SOUTH",
+    SOUTH: "NORTH",
+    EAST: "WEST",
+    WEST: "EAST",
+  };
+
+  for (const dir of arr) {
+    if (stack.length > 0 && stack[stack.length - 1] === opposites[dir]) {
+      console.log(`check: ${opposites[dir]}`);
+      
+      stack.pop();
+    } else {
+      stack.push(dir);
+    }
+  }
+
+  return stack;
+}
+
+console.log(dirReduc(["NORTH", "SOUTH", "EAST", "WEST", "NORTH"]));
+
+// пояснення
+// 1
+// dir = "NORTH"
+
+// stack порожній → додаємо "NORTH"
+
+// stack = ["NORTH"];
+// 2
+// dir = "SOUTH"
+
+// stack[stack.length - 1] = "NORTH"
+// opposites["SOUTH"] = "NORTH"
+// "NORTH" === "NORTH" (співпадає ✅)
+// Видаляємо "NORTH" (stack.pop())
+// stack = [];
+
+// dir = "EAST"
+
+// stack порожній → додаємо "EAST"
+
+// stack = ["EAST"];
+// ......
