@@ -1761,3 +1761,16 @@ export function disemvowel(str: string): string{
 }
 
 // console.log(disemvowel("This website is for losers LOL!"));
+
+//  ***************************************************************************
+// 106
+
+export function findSmallestInt(args: number[]): number{
+  return Math.min(...args);
+}
+
+// console.log(findSmallestInt([34, 15, 88, 2]));
+
+//  ***************************************************************************
+// 107
+

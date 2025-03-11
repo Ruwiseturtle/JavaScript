@@ -28,6 +28,7 @@ exports.checkExam = checkExam;
 exports.warnTheSheep = warnTheSheep;
 exports.dirReduc = dirReduc;
 exports.disemvowel = disemvowel;
+exports.findSmallestInt = findSmallestInt;
 // const button = document.querySelector("button")!;
 // const input = document.querySelector("input")!;
 // if (button && input) {
@@ -1372,5 +1373,11 @@ function disemvowel(str) {
     const vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
     return [...str].map(item => vowels.includes(item) ? 'null' : item).filter(item => item !== 'null').join('');
 }
-console.log(disemvowel("This website is for losers LOL!"));
+// console.log(disemvowel("This website is for losers LOL!"));
+//  ***************************************************************************
+// 106
+function findSmallestInt(args) {
+    return Math.min(...args);
+}
+console.log(findSmallestInt([34, 15, 88, 2]));
 //# sourceMappingURL=index.js.map
