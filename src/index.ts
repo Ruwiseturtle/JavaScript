@@ -1774,3 +1774,9 @@ export function findSmallestInt(args: number[]): number{
 //  ***************************************************************************
 // 107
 
+export function noBoringZeros(n: number): number{
+  if (n === 0) return 0;
+
+  while()
+  return 0
+}
