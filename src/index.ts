@@ -1777,6 +1777,31 @@ export function findSmallestInt(args: number[]): number{
 export function noBoringZeros(n: number): number{
   if (n === 0) return 0;
 
-  while()
-  return 0
+  let strN = [...n.toString()];
+
+  while (strN[strN.length - 1] === "0") {
+    strN.pop();
+  }
+  
+  let res = Number(strN.join(''));
+ 
+  
+  return res;
 }
+
+// noBoringZeros(1450);
+
+//  ***************************************************************************
+// 108
+
+export function getRealFloor(n: number): number{
+  if (n <= 0) return n;
+  return n < 13 ? n - 1 : n - 2;
+  // return n <= 0 ? n : n <= 13 ? n - 1 : n - 2;
+}
+
+// console.log(getRealFloor(-1));
+
+//  ***************************************************************************
+// 109
+

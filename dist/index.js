@@ -29,6 +29,8 @@ exports.warnTheSheep = warnTheSheep;
 exports.dirReduc = dirReduc;
 exports.disemvowel = disemvowel;
 exports.findSmallestInt = findSmallestInt;
+exports.noBoringZeros = noBoringZeros;
+exports.getRealFloor = getRealFloor;
 // const button = document.querySelector("button")!;
 // const input = document.querySelector("input")!;
 // if (button && input) {
@@ -1379,5 +1381,24 @@ function disemvowel(str) {
 function findSmallestInt(args) {
     return Math.min(...args);
 }
-console.log(findSmallestInt([34, 15, 88, 2]));
+// console.log(findSmallestInt([34, 15, 88, 2]));
+//  ***************************************************************************
+// 107
+function noBoringZeros(n) {
+    if (n === 0)
+        return 0;
+    let strN = [...n.toString()];
+    while (strN[strN.length - 1] === "0") {
+        strN.pop();
+    }
+    let res = Number(strN.join(''));
+    return res;
+}
+// noBoringZeros(1450);
+//  ***************************************************************************
+// 108
+function getRealFloor(n) {
+    return n < 13 ? n - 1 : n - 2;
+}
+console.log(getRealFloor(-1));
 //# sourceMappingURL=index.js.map
