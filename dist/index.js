@@ -31,6 +31,8 @@ exports.disemvowel = disemvowel;
 exports.findSmallestInt = findSmallestInt;
 exports.noBoringZeros = noBoringZeros;
 exports.getRealFloor = getRealFloor;
+exports.dublicateEncode = dublicateEncode;
+exports.divisors = divisors;
 // const button = document.querySelector("button")!;
 // const input = document.querySelector("input")!;
 // if (button && input) {
@@ -1398,7 +1400,33 @@ function noBoringZeros(n) {
 //  ***************************************************************************
 // 108
 function getRealFloor(n) {
+    if (n <= 0)
+        return n;
     return n < 13 ? n - 1 : n - 2;
+    // return n <= 0 ? n : n <= 13 ? n - 1 : n - 2;
 }
-console.log(getRealFloor(-1));
+// console.log(getRealFloor(-1));
+//  ***************************************************************************
+// 109
+function dublicateEncode(word) {
+    let str = word.toLowerCase();
+    let res = [...word];
+    for (let i = 0; i < word.length; i++) {
+        let char = str[i];
+        let count = str.split(char).length - 1;
+        res[i] = count === 1 ? '(' : ')';
+    }
+    return res.join('');
+}
+// console.log(dublicateEncode("bAnanan"));
+//  ***************************************************************************
+// 110
+function divisors(n) {
+    let count = 0;
+    for (let a = 1; a <= n; a++) {
+        count = n % a === 0 ? count + 1 : count;
+    }
+    return count;
+}
+console.log(divisors(6));
 //# sourceMappingURL=index.js.map

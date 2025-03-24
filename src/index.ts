@@ -1805,3 +1805,46 @@ export function getRealFloor(n: number): number{
 //  ***************************************************************************
 // 109
 
+export function dublicateEncode(word: string) {
+  let str = word.toLowerCase();
+  let res = [...word];
+
+  for (let i = 0; i < word.length; i++){
+    let char = str[i];
+    let count = str.split(char).length - 1;
+    res[i] = count === 1 ? '(' : ')';  
+  }
+
+  return res.join('');  
+}
+
+// console.log(dublicateEncode("bAnanan"));
+
+//  ***************************************************************************
+// 110
+
+export function divisors(n: number) {
+  let count = 0;
+
+  for (let a = 1; a <= n; a++){
+    count = n % a === 0 ? count + 1 : count;    
+  }
+
+  return count;
+}
+
+// console.log(divisors(6));
+
+//  ***************************************************************************
+// 111
+
+export function revRot(s: string, sz: number): string {
+  if (sz <= 0) return '';
+  if (sz > s.length) return "";
+
+  
+
+  return ''
+}
+
+console.log(revRot);
