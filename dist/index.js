@@ -33,6 +33,7 @@ exports.noBoringZeros = noBoringZeros;
 exports.getRealFloor = getRealFloor;
 exports.dublicateEncode = dublicateEncode;
 exports.divisors = divisors;
+exports.revRot = revRot;
 // const button = document.querySelector("button")!;
 // const input = document.querySelector("input")!;
 // if (button && input) {
@@ -1428,5 +1429,33 @@ function divisors(n) {
     }
     return count;
 }
-console.log(divisors(6));
+// console.log(divisors(6));
+//  ***************************************************************************
+// 111
+// Якщо сума кратна 2 → перевернути цей шматок.
+// Якщо сума не кратна 2 → зробити зсув вліво (перенести перший символ у кінець).
+function revRot(s, sz) {
+    if (sz <= 0)
+        return '';
+    if (sz > s.length)
+        return "";
+    let res = "";
+    for (let i = 0; i < Math.trunc(s.length / sz); i++) {
+        let startIndex = i * sz;
+        let subStr = s.slice(startIndex, startIndex + sz);
+        let sum = [...subStr].reduce((acum, item) => acum + Number(item), 0);
+        //перевертаємо
+        if (sum % 2 !== 1) {
+            let partOfStrReversed = [...subStr].reverse().slice().join('');
+            res = res + partOfStrReversed;
+        }
+        //переносимо перший символ у кінець
+        else {
+            let partOfStrFirstSToEnd = subStr.slice(1, sz) + subStr.slice(0, 1);
+            res = res + partOfStrFirstSToEnd;
+        }
+    }
+    return res;
+}
+console.log(revRot("123456987654", 6));
 //# sourceMappingURL=index.js.map

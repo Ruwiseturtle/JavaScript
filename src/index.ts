@@ -1837,14 +1837,34 @@ export function divisors(n: number) {
 
 //  ***************************************************************************
 // 111
+// Якщо сума кратна 2 → перевернути цей шматок.
+// Якщо сума не кратна 2 → зробити зсув вліво (перенести перший символ у кінець).
 
 export function revRot(s: string, sz: number): string {
   if (sz <= 0) return '';
-  if (sz > s.length) return "";
-
+  if (sz > s.length) return ""; 
   
+  let res = "";
+  
+  for (let i = 0; i < Math.trunc(s.length / sz); i++){
+    let startIndex = i * sz;
+    let subStr = s.slice(startIndex, startIndex + sz);
+   
+    let sum = [...subStr].reduce((acum, item) => acum + Number(item), 0)
 
-  return ''
+    //перевертаємо
+    if (sum % 2 !== 1) {
+      let partOfStrReversed = [...subStr].reverse().slice().join('');
+      res = res + partOfStrReversed;      
+    }
+    //переносимо перший символ у кінець
+    else {
+      let partOfStrFirstSToEnd = subStr.slice(1, sz) + subStr.slice(0, 1);
+       res = res + partOfStrFirstSToEnd;     
+    }    
+  }
+
+  return res;
 }
 
-console.log(revRot);
+console.log(revRot("123456987654", 6));
