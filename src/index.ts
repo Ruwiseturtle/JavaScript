@@ -1867,4 +1867,7 @@ export function revRot(s: string, sz: number): string {
   return res;
 }
 
-console.log(revRot("123456987654", 6));
+// console.log(revRot("123456987654", 6));
+
+//  ***************************************************************************
+// 112
