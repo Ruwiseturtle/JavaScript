@@ -1871,3 +1871,24 @@ export function revRot(s: string, sz: number): string {
 
 //  ***************************************************************************
 // 112
+
+export function get_age(age: string): number{
+
+  return 0
+}
+
+get_age("5 years old");
+
+//  ***************************************************************************
+// 113
+ 
+export function get_age1(age: string): number{
+  
+  return Number(age.split(" ")[0]);
+}
+
+// console.log(get_age1("1 year old"));
+
+//  ***************************************************************************
+// 114
+

@@ -34,6 +34,8 @@ exports.getRealFloor = getRealFloor;
 exports.dublicateEncode = dublicateEncode;
 exports.divisors = divisors;
 exports.revRot = revRot;
+exports.get_age = get_age;
+exports.get_age1 = get_age1;
 // const button = document.querySelector("button")!;
 // const input = document.querySelector("input")!;
 // if (button && input) {
@@ -1457,5 +1459,18 @@ function revRot(s, sz) {
     }
     return res;
 }
-console.log(revRot("123456987654", 6));
+// console.log(revRot("123456987654", 6));
+//  ***************************************************************************
+// 112
+function get_age(age) {
+    return 0;
+}
+get_age("5 years old");
+//  ***************************************************************************
+// 113
+// 
+function get_age1(age) {
+    return Number(age.split(" ")[0]);
+}
+console.log(get_age1("1 year old"));
 //# sourceMappingURL=index.js.map
