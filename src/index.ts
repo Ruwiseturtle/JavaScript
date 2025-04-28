@@ -1852,7 +1852,8 @@ export function revRot(s: string, sz: number): string {
    
     let sum = [...subStr].reduce((acum, item) => acum + Number(item), 0)
 
-    //перевертаємо
+    //перевертаємо  
+    // 
     if (sum % 2 !== 1) {
       let partOfStrReversed = [...subStr].reverse().slice().join('');
       res = res + partOfStrReversed;      
@@ -1870,25 +1871,23 @@ export function revRot(s: string, sz: number): string {
 // console.log(revRot("123456987654", 6));
 
 //  ***************************************************************************
-// 112
-
-export function get_age(age: string): number{
-
-  return 0
-}
-
-get_age("5 years old");
-
-//  ***************************************************************************
-// 113
+// 112  
  
-export function get_age1(age: string): number{
+export function get_age(age: string): number{
   
   return Number(age.split(" ")[0]);
 }
 
-// console.log(get_age1("1 year old"));
+// console.log(get_age("1 year old"));
 
-//  ***************************************************************************
+//***************************************************************************
+// 113 
+export const sayHello = (name: string[], city: string, state: string): string => {
+  
+  return "";
+};
+
+//***************************************************************************
 // 114
+
 
